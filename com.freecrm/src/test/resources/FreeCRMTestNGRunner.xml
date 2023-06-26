@@ -12,6 +12,7 @@
     <test name="smoke">
     <classes>
         <class name="test_authentication.TestAuthentication"/>
+        <class name="test_createnewcontact.TestCreateNewContact"/>
     </classes>
 </test>
 </suite>
