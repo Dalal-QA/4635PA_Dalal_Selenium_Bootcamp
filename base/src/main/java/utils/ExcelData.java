@@ -109,7 +109,7 @@ public class ExcelData {
      * @param sheetName Sheet name to read from
      * @return All populated String cells in the last row of the sheet
      */
-    public String[] readStringArray(String sheetName) {
+    public  String[] readStringArray(String sheetName) {
         String[] data;
         File file = new File(this.filePath);
 
