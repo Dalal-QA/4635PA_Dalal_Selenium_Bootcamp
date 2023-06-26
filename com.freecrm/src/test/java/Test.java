@@ -1,2 +1,2 @@
-public class TestAuthentication {
+public class Test {
 }

@@ -1,4 +1,4 @@
 import base.BasePage;
 
-public class HomePage extends BasePage {
+public class ObjectPage extends BasePage {
 }
