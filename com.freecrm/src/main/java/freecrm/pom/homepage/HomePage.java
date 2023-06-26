@@ -2,6 +2,7 @@ package freecrm.pom.homepage;
 
 import base.BasePage;
 
+import freecrm.pom.authentication.LogInPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -16,7 +17,9 @@ public class HomePage extends BasePage {
 
         PageFactory.initElements(driver, this);
     }
-    public void clickOnLoginButton() {
+    public LogInPage clickOnLoginButton() {
+
         safeClickOnElement(loginButton);
+        return new LogInPage();
     }
 }

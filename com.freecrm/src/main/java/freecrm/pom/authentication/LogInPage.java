@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginIn extends BasePage {
+public class LogInPage extends BasePage {
 
 
     @FindBy(xpath="//input[@name='email']")
@@ -17,7 +17,9 @@ public class LoginIn extends BasePage {
     @FindBy(xpath = "//div[@class='ui fluid large blue submit button']")
     public WebElement LoginButton;
 
-    public LoginIn(){
+
+
+    public LogInPage(){
         PageFactory.initElements(driver, this);
     }
 
