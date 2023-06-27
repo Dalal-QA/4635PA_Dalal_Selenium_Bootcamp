@@ -11,13 +11,7 @@ import org.testng.annotations.Test;
 import utils.ExcelData;
 
 public class TestCreateNewContact extends BasePage {
-//    @Test(priority = 2, groups ={"smoke"})
-//
-//    public void testDoAddNewContact(){
-//        CreateNewContactPage createNewContactPage= new CreateNewContactPage();
-//        createNewContactPage.do
-//
-//    }
+
 
 
 
@@ -33,7 +27,7 @@ public class TestCreateNewContact extends BasePage {
         CreateNewContactPage createNewContactPage= new CreateNewContactPage();
 
         homePage.clickOnLoginButton();
-        String email1 ="sadouni.dalal@gmail.com";
+        String email1 = "sadouni.dalal@gmail.com";
         String password="AydenLiam1213";
         logInPage.doLogin(email1,password);
         dashboardUserPage.doClickAddButton();
@@ -46,7 +40,7 @@ public class TestCreateNewContact extends BasePage {
     @DataProvider(name="addnewcontact")
     public Object [][] addContactDataProvider() {
 
-        String path= System.getProperty("user.dir")+"\\resources\\test_data.xlsx";
+        String path= System.getProperty("user.dir")+"\\src\\test\\resources\\test_data.xlsx";
         ExcelData ex=new ExcelData(path);
         String data[][]=ex.readStringArrays("doAddContact");
         return data;
