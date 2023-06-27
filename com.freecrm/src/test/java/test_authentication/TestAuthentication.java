@@ -66,30 +66,46 @@ public class TestAuthentication extends BasePage {
         Assert.assertTrue(isElementVisible(logInPage.LoginButton));
     }
 
-//    @Test(priority= 1, groups= {"BAT"},dataProvider = "logindataprovider")
-//
-//    public void testLogin(String email,String pass){
-//        HomePage homePage = new HomePage();
-//        LogInPage loginPage = new LogInPage();
-//        DashboardUserPage dashboardPage = new DashboardUserPage();
-//
-//        homePage.clickOnLoginButton();
-//
-//        loginPage.doLogin(email, pass);
-//
-//        Assert.assertTrue(isElementVisible(dashboardPage.userName));
-//
-//    }
-//    @DataProvider(name="logindataprovider")
-//    public String[][] loginDataProvider()
-//    {
-//
-//        String path= System.getProperty("user.dir")+"\\resources\\test_data.xlsx";
-//        ExcelData ex=new ExcelData(path);
-//        String data[][]=ex.readStringArrays("login_crm");
-//        return data;
-//
-//    }
+    @Test(priority= 1, groups= {"BAT"},dataProvider = "logindataprovider")
+
+    public void testLogin(String email,String pass){
+        HomePage homePage = new HomePage();
+        LogInPage loginPage = new LogInPage();
+        DashboardUserPage dashboardPage = new DashboardUserPage();
+
+        homePage.clickOnLoginButton();
+
+        loginPage.doLogin(email, pass);
+
+        Assert.assertTrue(isElementVisible(dashboardPage.userName));
+
+    }
+    @DataProvider(name="logindataprovider")
+    public String[][] loginDataProvider()
+    {
+
+        String path= System.getProperty("user.dir")+"\\src\\test\\resources\\test_data.xlsx";
+        ExcelData ex=new ExcelData(path);
+        String data[][]=ex.readStringArrays("doSignIn");
+        return data;
+
+    }
+
+    @Test(priority = 2, groups={"smoke"}, dataProvider = "logindataprovider")
+
+    public void testLogOut(String email,String pass){
+        HomePage homePage= new HomePage();
+        LogInPage loginPage = new LogInPage();
+        DashboardUserPage dashboardUserPage=new DashboardUserPage();
+
+        homePage.clickOnLoginButton();
+
+
+        loginPage.doLogin(email,pass);
+        dashboardUserPage.doLogOut();
+
+        Assert.assertTrue(isElementVisible(loginPage.LoginButton));
+    }
 
 
 }
