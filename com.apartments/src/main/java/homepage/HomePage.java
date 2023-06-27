@@ -19,6 +19,7 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[.='Sign In']")
     public WebElement signInLink;
     public HomePage(){
+
         PageFactory.initElements(driver, this);
     }
 

@@ -2,9 +2,12 @@ package authenticationpage;
 
 import base.BasePage;
 import homepage.HomePage;
+import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class SignInPage extends BasePage {
 
@@ -33,8 +36,8 @@ public class SignInPage extends BasePage {
 
     public HomePage doSignIn(String email, String password){
        enterEmailAddress(email);
-        enterPassword(password);
-        clickOnSignInButton();
-        return new HomePage();
+       enterPassword(password);
+       clickOnSignInButton();
+       return new HomePage();
     }
 }

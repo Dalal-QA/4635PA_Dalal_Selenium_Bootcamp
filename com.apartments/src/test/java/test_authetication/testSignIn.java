@@ -51,14 +51,14 @@ public class testSignIn extends BasePage {
         homePage.clickOnSignInLink();
 
         signInPage.doSignIn(email,password);
-        Assert.assertTrue(checkElementPresent(homePage.userName));
+        Assert.assertTrue(checkElementPresent(homePage.loggedInUsername));
     }
 
     @DataProvider(name="signindataprovider")
     public Object[][] testSignInUserDataProvider()
     {
 
-        String path= System.getProperty("user.dir")+"\\resources\\test_data.xlsx";
+        String path= System.getProperty("user.dir")+"\\src\\test\\resources\\test_data.xlsx";
         ExcelData ex=new ExcelData(path);
         String data[][]=ex.readStringArrays("doSignIn");
         return data;
