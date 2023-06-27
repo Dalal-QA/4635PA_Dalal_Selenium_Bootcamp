@@ -14,20 +14,18 @@ public class HomePage extends BasePage {
     @FindBy(xpath="//button[.='Sign in']")
     public WebElement signInLink;
 
-    @FindBy(xpath ="//a[.='Sign in']")
+    @FindBy(xpath ="//*[@id=\"app-layer-base\"]/div[1]/div[1]/header/div/section/div/div/div[2]/div[2]/div/div/div/div[3]/a")
     public WebElement signInButton1;
 
-    @FindBy(xpath="//input[@id='loginFormEmailInput']")
-    public WebElement inputEmailField;
+public void clickOnSignInLink(){
+    safeClickOnElement(signInLink);
+}
+public void clickOnSignIButton1(){
+    safeClickOnElement(signInButton1);
+}
 
-    @FindBy(xpath="//input[@id='loginFormEmailInput']")
-    public WebElement continueButton;
 
-    @FindBy(xpath="//button[@id='passwordButton']")
-    public WebElement enterPasswordInsteadButton;
 
-    @FindBy(xpath="//input[@id='enterPasswordFormPasswordInput']")
-    public WebElement passwordInputField;
 
 
 }
