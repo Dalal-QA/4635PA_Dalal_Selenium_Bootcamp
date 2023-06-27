@@ -12,7 +12,14 @@ import utils.ExcelData;
 
 public class TestAuthentication extends BasePage {
 
-
+    /* Test Case :Sign In to freecrm.com
+     * 1.Navigate to URl "https://freecrm.com"
+     * 2.Click on the "Sign In" button/link.
+     * 3.Enter a valid email address in the email input field
+     * 4.Enter a valid password in the password input field.
+     * 5.Click on the "Sign In" button
+     * 6.Verify that the user is successfully logged in and redirected to the user dashboard.
+     *  */
 
     @Test(priority = 1, groups={"smoke"})
     public void TestLogin(){
@@ -30,6 +37,19 @@ public class TestAuthentication extends BasePage {
         Assert.assertTrue(isElementVisible(dashboardUserPage.userName));
 
     }
+
+    /*Test Case :Sign Out to freecrm.com
+     *1.Navigate to URl "https://freecrm.com".
+     *2.Click on the "Sign In" button/link.
+     *3.Enter valid login credentials (username and password) in the respective input fields.
+     *4.Click on the "Login" button.
+     *5.Verify that the user is successfully logged in and redirected to the user dashboard or home page.
+     *6.Click on the account settings icon.
+     *7.From the dropdown menu, click on the "Log Out" option.
+     *8.Verify that the user is successfully signed out and redirected to a sign-in page.
+
+
+     */
     @Test(priority = 2, groups={"smoke"})
     public void testLogOut(){
         HomePage homePage= new HomePage();
