@@ -25,25 +25,37 @@ public class testSignIn extends BasePage {
      *  */
 
 
+//    @Test(priority = 1, groups = "smoke")
+//
+//    public void testDoSignIn() {
+//
+//        HomePage homePage = new HomePage();
+//
+//        homePage.clickOnSignInLink();
+//        ExcelData excelData = new ExcelData(BasePage.DATA_PATH);
+//        SignInPage signInPage = new SignInPage();
+//        String[][] credentials = excelData.readStringArrays("doSignIn");
+//        String email = credentials[0][0];
+//        String password = credentials[0][1];
+//        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='username']")));
+//        signInPage.doSignIn(email, password);
+//
+//
+//        Assert.assertTrue(checkElementPresent(homePage.userName));
+//    }
+
     @Test(priority = 1, groups = "smoke")
 
     public void testDoSignIn() {
 
         HomePage homePage = new HomePage();
+        SignInPage signInPage = new SignInPage();
 
         homePage.clickOnSignInLink();
-        ExcelData excelData = new ExcelData(BasePage.DATA_PATH);
-        SignInPage signInPage = new SignInPage();
-        String[][] credentials = excelData.readStringArrays("doSignIn");
-        String email = credentials[0][0];
-        String password = credentials[0][1];
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='username']")));
-        signInPage.doSignIn(email, password);
 
-
+        signInPage.doSignIn("abc1@gmail.com", "AydenLiam1213");
         Assert.assertTrue(checkElementPresent(homePage.userName));
     }
-
     @Test(priority= 2, groups= {"BAT"},dataProvider = "signindataprovider")
     public void testUserSignIn(String email,String password){
         SignInPage signInPage = new SignInPage();
@@ -65,7 +77,8 @@ public class testSignIn extends BasePage {
 
     }
 
-}
+    }
+
 
 
 
