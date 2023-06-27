@@ -42,6 +42,8 @@ public class BasePage {
     public static ExtentReports extent;
     public static JavascriptExecutor jsDriver;
 
+
+
     public BasePage() {
         dataInit();
         databaseInit();
@@ -78,7 +80,7 @@ public class BasePage {
 
     @Parameters({"driverConfigEnabled", "browser", "url"})
     @BeforeMethod
-    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("http://espn.com") String url) {
+    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("http://www.espn.com") String url) {
         if (Boolean.parseBoolean(driverConfigEnabled)) {
             driverInit(browser);
             driver.get(url);
@@ -346,6 +348,8 @@ public class BasePage {
         calendar.setTimeInMillis(millis);
         return calendar.getTime();
     }
+
+
     // endregion
 
 }
