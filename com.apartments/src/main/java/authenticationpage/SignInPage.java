@@ -23,6 +23,9 @@ public class SignInPage extends BasePage {
     @FindBy(xpath="//*[@id=\"iFrameResizer0\"]")
     public WebElement element;
 
+    @FindBy(xpath="//*[@id=\"forgotPasswordLink\"]")
+    public WebElement forgetPasswordLink;
+
     public SignInPage(){
 
         PageFactory.initElements(driver,this);

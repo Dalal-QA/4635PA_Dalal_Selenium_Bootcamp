@@ -1,4 +1,4 @@
-package test_authetication;
+package test_authentication;
 
 
 import base.BasePage;
