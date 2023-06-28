@@ -42,7 +42,7 @@ public class TestSearch extends BasePage {
 
     }
     @DataProvider(name="searchdataprovider")
-    public Object[][] loginDataProvider()
+    public Object[][] searchDataProvider()
     {
 
         String path= System.getProperty("user.dir")+"\\src\\test\\resources\\test_data.xlsx";

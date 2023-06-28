@@ -1,5 +1,6 @@
 package homepage;
 
+import accountsettingpage.AccountSettingPage;
 import authenticationpage.SignInPage;
 import base.BasePage;
 import org.openqa.selenium.WebElement;
@@ -24,7 +25,8 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//a[@id='headerSignOut']")
     public WebElement signOutLink;
-
+    @FindBy(xpath = "//a[@id='headerMyAccount']")
+    public WebElement myAccountButton;
     public HomePage(){
 
         PageFactory.initElements(driver, this);
@@ -42,6 +44,7 @@ public class HomePage extends BasePage {
         return new SignInPage();
     }
 public void hoverOverNameHeader(){
+
         hoverOverElement(nameDropDown);
 }
 public void clickOnSignOut(){
@@ -51,5 +54,14 @@ public HomePage doSignOut(){
         hoverOverNameHeader();
         clickOnSignOut();
         return  new HomePage();
+}
+
+public void clickOnMyAccount(){
+        safeClickOnElement(myAccountButton);
+}
+public AccountSettingPage hoverClickOnAccount(){
+        hoverOverNameHeader();
+        clickOnMyAccount();
+        return new AccountSettingPage();
 }
 }
