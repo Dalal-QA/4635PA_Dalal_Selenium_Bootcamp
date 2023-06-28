@@ -3,17 +3,12 @@ package test_authetication;
 import authenticationpage.SignInPage;
 import base.BasePage;
 import homepage.HomePage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import utils.ExcelData;
 
-import javax.swing.*;
-import java.io.File;
-
-public class testSignIn extends BasePage {
+public class TestAuthentication extends BasePage {
 
     /* Test Case :Sign In to Apartments.com
      * 1.Navigate to URl "www.apartments.com"
@@ -25,37 +20,26 @@ public class testSignIn extends BasePage {
      *  */
 
 
-//    @Test(priority = 1, groups = "smoke")
-//
-//    public void testDoSignIn() {
-//
-//        HomePage homePage = new HomePage();
-//
-//        homePage.clickOnSignInLink();
-//        ExcelData excelData = new ExcelData(BasePage.DATA_PATH);
-//        SignInPage signInPage = new SignInPage();
-//        String[][] credentials = excelData.readStringArrays("doSignIn");
-//        String email = credentials[0][0];
-//        String password = credentials[0][1];
-//        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='username']")));
-//        signInPage.doSignIn(email, password);
-//
-//
-//        Assert.assertTrue(checkElementPresent(homePage.userName));
-//    }
-
     @Test(priority = 1, groups = "smoke")
 
     public void testDoSignIn() {
 
         HomePage homePage = new HomePage();
-        SignInPage signInPage = new SignInPage();
 
         homePage.clickOnSignInLink();
+        ExcelData excelData = new ExcelData(BasePage.DATA_PATH);
+        SignInPage signInPage = new SignInPage();
+        String[][] credentials = excelData.readStringArrays("doSignIn");
+        String email = credentials[0][0];
+        String password = credentials[0][1];
 
-        signInPage.doSignIn("abc1@gmail.com", "AydenLiam1213");
+        signInPage.doSignIn(email, password);
+
+
         Assert.assertTrue(checkElementPresent(homePage.userName));
     }
+
+
     @Test(priority= 2, groups= {"BAT"},dataProvider = "signindataprovider")
     public void testUserSignIn(String email,String password){
         SignInPage signInPage = new SignInPage();
@@ -75,6 +59,36 @@ public class testSignIn extends BasePage {
         String data[][]=ex.readStringArrays("doSignIn");
         return data;
 
+    }
+
+
+    /* Test Case :Sign In to Apartments.com
+     * 1.Navigate to URl "www.apartments.com"
+     * 2.Click on the "Sign In" button/link.
+     * 3.Enter a valid email address in the email input field
+     * 4.Enter a valid password in the password input field.
+     * 5.Click on the "Sign In" button
+     * 6.Verify that the user is successfully logged in and redirected to the home page.
+     * 7.Hover over the username located in the header manu
+     * 8.Click on the "Sign Out" link
+     * 9.Verify that you are redirected to the homepage or a login page.
+     *
+     *  */
+
+    @Test(priority = 2, groups={"smoke"}, dataProvider = "signindataprovider")
+
+    public void testLogOut(String email,String pass){
+        HomePage homePage= new HomePage();
+        SignInPage signInPage = new SignInPage();
+
+
+        homePage.clickOnSignInLink();
+
+
+        signInPage.doSignIn(email,pass);
+        homePage.doSignOut();
+
+        Assert.assertTrue(isElementVisible(homePage.signInLink));
     }
 
     }

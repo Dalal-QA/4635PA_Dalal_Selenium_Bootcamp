@@ -20,8 +20,17 @@ public class SignInPage extends BasePage {
     @FindBy(xpath ="//*[@id=\"loginButton\"]")
     public WebElement signInButton;
 
+    @FindBy(xpath="//*[@id=\"iFrameResizer0\"]")
+    public WebElement element;
+
     public SignInPage(){
+
         PageFactory.initElements(driver,this);
+    }
+
+
+    public void switchToIframe( ) {
+        switchToFrameByElement(element);
     }
 
     public void enterEmailAddress(String email){
@@ -35,6 +44,7 @@ public class SignInPage extends BasePage {
     }
 
     public HomePage doSignIn(String email, String password){
+        switchToIframe();
        enterEmailAddress(email);
        enterPassword(password);
        clickOnSignInButton();

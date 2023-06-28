@@ -18,6 +18,13 @@ public class HomePage extends BasePage {
     public WebElement userName;
     @FindBy(xpath = "//a[.='Sign In']")
     public WebElement signInLink;
+
+    @FindBy(xpath = "//i[@class='storyicon down2StoryIcon']")
+    public WebElement nameDropDown;
+
+    @FindBy(xpath = "//a[@id='headerSignOut']")
+    public WebElement signOutLink;
+
     public HomePage(){
 
         PageFactory.initElements(driver, this);
@@ -34,6 +41,15 @@ public class HomePage extends BasePage {
         safeClickOnElement(signInLink);
         return new SignInPage();
     }
-
-
+public void hoverOverNameHeader(){
+        hoverOverElement(nameDropDown);
+}
+public void clickOnSignOut(){
+        safeClickOnElement(signOutLink);
+}
+public HomePage doSignOut(){
+        hoverOverNameHeader();
+        clickOnSignOut();
+        return  new HomePage();
+}
 }
