@@ -20,7 +20,7 @@ public class TestAuthentication extends BasePage {
      *  */
 
 
-    @Test(priority = 1, groups = "smoke")
+    @Test(priority = 1, groups = "BAT")
 
     public void testDoSignIn() {
 
@@ -40,7 +40,7 @@ public class TestAuthentication extends BasePage {
     }
 
 
-    @Test(priority= 2, groups= {"BAT"},dataProvider = "signindataprovider")
+    @Test(priority= 1, groups= {"BAT"},dataProvider = "signindataprovider")
     public void testUserSignIn(String email,String password){
         SignInPage signInPage = new SignInPage();
         HomePage homePage = new HomePage();
@@ -75,7 +75,7 @@ public class TestAuthentication extends BasePage {
      *
      *  */
 
-    @Test(priority = 2, groups={"smoke"}, dataProvider = "signindataprovider")
+    @Test(priority = 2, groups={"BAT"}, dataProvider = "signindataprovider")
 
     public void testLogOut(String email,String pass){
         HomePage homePage= new HomePage();

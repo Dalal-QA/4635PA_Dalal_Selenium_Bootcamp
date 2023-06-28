@@ -24,6 +24,15 @@ public class ResultSearchPage extends BasePage {
     @FindBy(xpath="//span[.='< $1.8k']")
     public WebElement searchResult;
 
+    @FindBy(xpath="//div[@id='placardContainer']//li[1]//a[@href='javascript:void(0);']")
+    public WebElement heartIcon1;
+    @FindBy(xpath="//div[@id='placardContainer']//li[2]//a[@href='javascript:void(0);']")
+    public WebElement heartIcon2;
+    @FindBy(xpath="//div[@id='notificationsFavorites']/i[@class='storyicon favoriteOutlineStoryIcon']")
+    public WebElement favoriteSection;
+    @FindBy(xpath="//div[@id='notificationsFavorites']/span[@class='label']")
+    public WebElement favoriteResult;
+
 
 
     public void clickOnPriceDropDown(){
@@ -45,5 +54,11 @@ public class ResultSearchPage extends BasePage {
         clickOnNoMinOption();
         clickOnMaxRentButton();
         clickOnMaxRentSelected();
+    }
+
+    public void clickOnHearts(){
+        safeClickOnElement(heartIcon1);
+        safeClickOnElement(heartIcon2);
+        safeClickOnElement(favoriteSection);
     }
 }
