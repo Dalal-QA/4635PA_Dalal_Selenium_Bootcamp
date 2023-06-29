@@ -1,7 +1,8 @@
 package freecrm.pom.authentication;
 
 import base.BasePage;
-import create_new_contact.CreateNewContactPage;
+import freecrm.pom.contactspage.ContactPage;
+import freecrm.pom.create_new_contact.CreateNewContactPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -46,9 +47,15 @@ public class DashboardUserPage extends BasePage {
         return new CreateNewContactPage();
     }
 
+
     public CreateNewContactPage doClickAddButton(){
         hoverOverContactsIcon();
         clickOnAddContactButton();
         return new CreateNewContactPage();
+    }
+
+    public ContactPage clickOnContactsIcon(){
+        safeClickOnElement(contactsIcon);
+        return new ContactPage();
     }
 }

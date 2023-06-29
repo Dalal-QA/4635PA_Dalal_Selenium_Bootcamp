@@ -1,4 +1,4 @@
-package create_new_contact;
+package freecrm.pom.create_new_contact;
 
 import base.BasePage;
 import org.openqa.selenium.WebElement;
@@ -20,14 +20,14 @@ public class CreateNewContactPage extends BasePage {
     @FindBy(xpath = "//form[@class='ui form segment custom-form-container']//div[@class='ui right corner labeled input']/input[@name='value']")
     public WebElement emailInputField;
 
-    @FindBy(xpath = "//form[@class='ui form segment custom-form-container']//div[@class='ui right corner labeled input']/input[@name='value']")
+    @FindBy(xpath = "//div[.='SelectNewActiveInactiveOn HoldTerminatedHot']")
     public WebElement statusDropDownBox;
 
     @FindBy(xpath ="//span[.='Active']")
     public WebElement activeStatus;
 
     @FindBy(xpath="//input[@name='address']")
-    public WebElement addressInputField;
+    public WebElement streetAddressInputField;
 
     @FindBy(xpath="//input[@name='city']")
     public WebElement cityInputField;
@@ -63,8 +63,14 @@ public class CreateNewContactPage extends BasePage {
     @FindBy(xpath = "//input[@placeholder='Number']")
     public  WebElement phoneNumberInput;
 
-    @FindBy(xpath = "//input[@placeholder='Number']")
+    @FindBy(xpath = "//div[@class='four fields']//input[@name='name']")
     public WebElement phoneNumberTypeBox;
+
+    @FindBy(xpath = "//button[@class='ui linkedin button']")
+    public WebElement saveButton;
+    @FindBy(xpath = "//i[@class='large user red icon']")
+    public WebElement redIcon;
+
 
     public void enterFirstName(String firstName){
         sendKeysToElement(firstNameInputField, firstName);
@@ -81,9 +87,10 @@ public class CreateNewContactPage extends BasePage {
          sendKeysToElement(emailInputField, email);
      }
      public void clickOnCategoryBox(){
+
         safeClickOnElement(categoryDropdown);
         }
-      public void clickOnLeadOption(){
+      public void clickOnLeadOption() {
         safeClickOnElement(leadDropdownOption);
       }
 
@@ -97,25 +104,30 @@ public class CreateNewContactPage extends BasePage {
         sendKeysToElement(descriptionInputField,description);
      }
      public void enterStreetAddress(String streetAddress){
+        sendKeysToElement(streetAddressInputField, streetAddress);
 
      }
      public void enterCity(String city){
-        sendKeysToElement(addressInputField,city);
+        sendKeysToElement(cityInputField,city);
      }
     public void enterState(String state){
-        sendKeysToElement(addressInputField,state);
+        sendKeysToElement(stateInputField,state);
     }
     public void enterZip(String zip){
-        sendKeysToElement(addressInputField,zip);
+        sendKeysToElement(zipInputField,zip);
     }
 
     public void enterPhoneNumber(String phoneNumber){
-        sendKeysToElement(phoneNumberTypeBox,phoneNumber);
+        sendKeysToElement(phoneNumberInput,phoneNumber);
+
+    }
+    public void clickOnSaveButton(){
+       safeClickOnElement(saveButton);
 
     }
 
-    public  void doAddContact(String firstName, String lastName,String companyName,String email,
-                              String description, String streetAddress,  String city, String state,String phoneNumber){
+    public ContactsAddedPage doAddContact(String firstName, String lastName, String companyName, String email,
+                                          String description, String streetAddress, String city, String state, String phoneNumber){
 enterFirstName(firstName);
 enterLastName(lastName);
 enterCompanyName(companyName);
@@ -129,12 +141,10 @@ enterStreetAddress(streetAddress);
 enterCity(city);
 enterState(state);
 enterPhoneNumber(phoneNumber);
+clickOnSaveButton();
 
+        return new ContactsAddedPage();
     }
-
-
-
-
 
 }
 

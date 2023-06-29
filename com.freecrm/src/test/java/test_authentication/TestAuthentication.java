@@ -1,7 +1,6 @@
 package test_authentication;
 
 import base.BasePage;
-import create_new_contact.CreateNewContactPage;
 import freecrm.pom.authentication.DashboardUserPage;
 import freecrm.pom.authentication.LogInPage;
 import freecrm.pom.homepage.HomePage;
@@ -53,15 +52,15 @@ public class TestAuthentication extends BasePage {
     @Test(priority = 2, groups={"smoke"})
     public void testLogOut(){
         HomePage homePage= new HomePage();
-       DashboardUserPage dashboardUserPage=new DashboardUserPage();
+       //DashboardUserPage dashboardUserPage=new DashboardUserPage();
 
 
         LogInPage logInPage= homePage.clickOnLoginButton();
         String email="sadouni.dalal@gmail.com";
         String password="AydenLiam1213";
 
-         logInPage.doLogin(email,password);
-         dashboardUserPage.doLogOut();
+         DashboardUserPage dashboardUserPage=logInPage.doLogin(email,password);
+        dashboardUserPage.doLogOut();
 
         Assert.assertTrue(isElementVisible(logInPage.LoginButton));
     }
@@ -70,14 +69,9 @@ public class TestAuthentication extends BasePage {
 
     public void testLogin(String email,String pass){
         HomePage homePage = new HomePage();
-        LogInPage loginPage = new LogInPage();
-        DashboardUserPage dashboardPage = new DashboardUserPage();
-
-        homePage.clickOnLoginButton();
-
-        loginPage.doLogin(email, pass);
-
-        Assert.assertTrue(isElementVisible(dashboardPage.userName));
+        LogInPage logInPage=homePage.clickOnLoginButton();
+        DashboardUserPage dashboardUserPage =logInPage.doLogin(email, pass);
+        Assert.assertTrue(isElementVisible(dashboardUserPage.userName));
 
     }
     @DataProvider(name="logindataprovider")
