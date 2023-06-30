@@ -46,7 +46,7 @@ public class BasePage {
         dataInit();
         databaseInit();
     }
-
+    @BeforeClass
     public void databaseInit() {
         String host = dbConfig.get(BaseConfig.DBProperties.HOST);
         String user = dbConfig.get(BaseConfig.DBProperties.USER);
