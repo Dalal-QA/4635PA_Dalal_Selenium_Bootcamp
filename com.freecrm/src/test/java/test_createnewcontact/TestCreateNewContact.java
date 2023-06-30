@@ -13,7 +13,15 @@ import utils.ExcelData;
 
 public class TestCreateNewContact extends BasePage {
 
+/*Test case: Add a new contact in FreeCRM.com
+*1.Launch the FreeCRM.com application and navigate to the login page
+*2.Enter valid login credentials (username and password) and click on the "Login" button
+*3.Click on the "Contacts" or "People" link to open the contacts page
+*4.Fill in the required fields such as name, email, phone number, or any other necessary contact information.
+*5.Save the contact by clicking on the "Save" or "Create" button
+* 6.Verify that the contact is successfully created and added to the contact list
 
+ */
 
 
     @Test(priority= 2, groups= {"BAT"},dataProvider = "createcontactdataprovider")
