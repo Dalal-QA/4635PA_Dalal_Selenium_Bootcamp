@@ -11,8 +11,8 @@ public class TestSwitchLanguage extends BasePage {
      *1.Open the Bank of America website.
      *2.Select a different language from the available options.
      *3.Verify that the website content and interface are updated to the selected language.
-     *4.Navigate to different pages on the website and ensure that the language remains consistent
-     *5.Perform basic actions, such as clicking links or buttons, to confirm that the language translations are accurate and understandable.
+     *4.Click on "Cuentas de cheques" to ensure that the language remains consistent
+     *
      *
      */
 

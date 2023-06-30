@@ -20,12 +20,16 @@ public class BankOfAmericaPage extends BasePage {
 
     @FindBy(xpath="//a[@id='NAV_EN_ES']")
     public WebElement languageButton;
+    @FindBy(xpath="//a[@id='navChecking']/span[@class='title']")
+    public WebElement cuentasDeChequesButton;
 
     public AtmLocationPage clickOnFindAtmLink(){
         safeClickOnElement(findAtmLink);
         return new AtmLocationPage();
     }
-
+    public void clickOnCuentasDeChequesButton(){
+        safeClickOnElement(cuentasDeChequesButton);
+    }
     public void clickOnEnEspagnolButton(){
         safeClickOnElement(languageButton);
 
@@ -35,6 +39,7 @@ public class BankOfAmericaPage extends BasePage {
     }
    public void doSwitchLanguages(){
         clickOnEnEspagnolButton();
+        clickOnCuentasDeChequesButton();
         clickOnInEnglish();
    }
 }
