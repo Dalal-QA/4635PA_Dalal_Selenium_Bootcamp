@@ -12,27 +12,22 @@ import utils.ExcelData;
 import java.util.Set;
 
 public class TestLocatorAtm extends BasePage {
+    /* Test Case: ATM Locator
+    *1.Open the Bank of America website
+    *2.Click on "Find your closest center or ATM"
+    *3.Enter a valid location or use the current location option.
+    *4.Submit the search
+    * 5.Verify that the result page display a list of ATMs in the specified location or nearby, along with their details and directions.
+     */
 
     @Test(priority = 1, groups = {"BAT"}, dataProvider = "searchAtmLocationDataProvider")
 
     public void testSearchAtmLocator(String zipCode) {
-        //HomePage homePage = new HomePage();
+
         BankOfAmericaPage bankOfAmericaPage = new BankOfAmericaPage();
-        AtmLocationPage atmLocationPage = new AtmLocationPage();
-//        homePage.clickOnBoaButton();
-//        // Get the handle of the current window
-//        String currentWindowHandle = driver.getWindowHandle();
-//        Set<String> windowHandles = driver.getWindowHandles();
-//        for (String window : windowHandles) {
-//            // Check if it is the current window or the main window
-//            if (!window.equals(currentWindowHandle)) {
-//                // Switch the focus to the new window
-//                driver.switchTo().window(window);
-//                break;
-//            }
-            bankOfAmericaPage.clickOnFindAtmLink();
-            atmLocationPage.doSearchAtmLocation(zipCode);
-            Assert.assertTrue(isElementVisible(atmLocationPage.locationFound));
+        AtmLocationPage atmLocationPage=bankOfAmericaPage.clickOnFindAtmLink();
+        atmLocationPage.doSearchAtmLocation(zipCode);
+        Assert.assertTrue(isElementVisible(atmLocationPage.locationFound));
 
         }
 
@@ -46,5 +41,27 @@ public class TestLocatorAtm extends BasePage {
             return data;
 
         }
+
+    @Test(priority = 1, groups = {"BAT"}, dataProvider = "searchAtmLocationInvalidZipDataProvider")
+
+    public void testSearchAtmLocatorWithInvalidZip(String zipCode) {
+
+        BankOfAmericaPage bankOfAmericaPage = new BankOfAmericaPage();
+        AtmLocationPage atmLocationPage=bankOfAmericaPage.clickOnFindAtmLink();
+        atmLocationPage.doSearchAtmLocation(zipCode);
+        Assert.assertTrue(isElementVisible(atmLocationPage.locationFound));
+
+    }
+
+    @DataProvider(name = "searchAtmLocationInvalidZipDataProvider")
+    public String[][] searchAtmInvalidZipDataProvider()
+    {
+
+        String path = System.getProperty("user.dir") + "\\src\\test\\resources\\test_data.xlsx";
+        ExcelData ex = new ExcelData(path);
+        String data[][] = ex.readStringArrays("invalidZip");
+        return data;
+
+    }
     }
 

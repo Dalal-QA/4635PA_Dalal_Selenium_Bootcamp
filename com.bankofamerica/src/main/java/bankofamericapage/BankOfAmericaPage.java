@@ -18,10 +18,24 @@ public class BankOfAmericaPage extends BasePage {
     @FindBy(linkText = "Find your closest financial center or ATM")
     public WebElement findAtmLink;
 
+    @FindBy(xpath="//a[@id='NAV_EN_ES']")
+    public WebElement languageButton;
+
     public AtmLocationPage clickOnFindAtmLink(){
         safeClickOnElement(findAtmLink);
         return new AtmLocationPage();
     }
 
+    public void clickOnEnEspagnolButton(){
+        safeClickOnElement(languageButton);
+
+    }
+    public void clickOnInEnglish(){
+        safeClickOnElement(languageButton);
+    }
+   public void doSwitchLanguages(){
+        clickOnEnEspagnolButton();
+        clickOnInEnglish();
+   }
 }
 

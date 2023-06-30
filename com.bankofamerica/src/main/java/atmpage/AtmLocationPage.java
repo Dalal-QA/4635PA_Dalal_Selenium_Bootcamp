@@ -18,6 +18,8 @@ public class AtmLocationPage extends BasePage {
     @FindBy(xpath="//div[@id='aria-map-list-header']")
     public WebElement locationFound;
 
+
+
     public void enterZipOnSearchBar(String zipCode){
         sendKeysToElement(searchBar,zipCode);
     }
