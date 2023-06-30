@@ -42,7 +42,14 @@ public class TestLocatorAtm extends BasePage {
 
         }
 
-    @Test(priority = 1, groups = {"BAT"}, dataProvider = "searchAtmLocationInvalidZipDataProvider")
+    /* Test Case: ATM Locator with invalid zip code
+     *1.Open the Bank of America website
+     *2.Click on "Find your closest center or ATM"
+     *3.Enter an invalid location or use the current location option.
+     *4.Submit the search
+     * 5.Verify that the result page display an error message "No locations found" .
+     */
+    @Test(priority = 2, groups = {"BAT"}, dataProvider = "searchAtmLocationInvalidZipDataProvider")
 
     public void testSearchAtmLocatorWithInvalidZip(String zipCode) {
 
