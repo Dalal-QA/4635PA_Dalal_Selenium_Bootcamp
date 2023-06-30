@@ -15,7 +15,7 @@ public class BankOfAmericaPage extends BasePage {
     }
     @FindBy(xpath = "//div[@class='logo-container']//img[@alt='Bank of America Logo']")
     public WebElement BankOfAmericaLogo;
-    @FindBy(xpath = "//*[@id=\"finCenterLocator\"]")
+    @FindBy(linkText = "Find your closest financial center or ATM")
     public WebElement findAtmLink;
 
     public AtmLocationPage clickOnFindAtmLink(){

@@ -16,26 +16,26 @@ public class TestLocatorAtm extends BasePage {
     @Test(priority = 1, groups = {"BAT"}, dataProvider = "searchAtmLocationDataProvider")
 
     public void testSearchAtmLocator(String zipCode) {
-        HomePage homePage = new HomePage();
+        //HomePage homePage = new HomePage();
         BankOfAmericaPage bankOfAmericaPage = new BankOfAmericaPage();
         AtmLocationPage atmLocationPage = new AtmLocationPage();
-        homePage.clickOnBoaButton();
-        // Get the handle of the current window
-        String currentWindowHandle = driver.getWindowHandle();
-        Set<String> windowHandles = driver.getWindowHandles();
-        for (String window : windowHandles) {
-            // Check if it is the current window or the main window
-            if (!window.equals(currentWindowHandle)) {
-                // Switch the focus to the new window
-                driver.switchTo().window(window);
-                break;
-            }
+//        homePage.clickOnBoaButton();
+//        // Get the handle of the current window
+//        String currentWindowHandle = driver.getWindowHandle();
+//        Set<String> windowHandles = driver.getWindowHandles();
+//        for (String window : windowHandles) {
+//            // Check if it is the current window or the main window
+//            if (!window.equals(currentWindowHandle)) {
+//                // Switch the focus to the new window
+//                driver.switchTo().window(window);
+//                break;
+//            }
             bankOfAmericaPage.clickOnFindAtmLink();
             atmLocationPage.doSearchAtmLocation(zipCode);
             Assert.assertTrue(isElementVisible(atmLocationPage.locationFound));
 
         }
-    }
+
         @DataProvider(name = "searchAtmLocationDataProvider")
         public String[][] searchAtmDataProvider()
         {

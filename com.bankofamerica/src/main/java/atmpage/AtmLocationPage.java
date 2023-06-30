@@ -24,8 +24,8 @@ public class AtmLocationPage extends BasePage {
   public void clickOnSearchButton(){
         safeClickOnElement(searchButton);
   }
-  public void doSearchAtmLocation(String zipcode){
-      enterZipOnSearchBar(zipcode);
+  public void doSearchAtmLocation(String zipCode){
+      enterZipOnSearchBar(zipCode);
       clickOnSearchButton();
   }
 
