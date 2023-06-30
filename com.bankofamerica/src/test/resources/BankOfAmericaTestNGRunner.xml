@@ -7,6 +7,6 @@
     </listeners>
 
     <parameter name="browser" value="chrome"/>
-    <parameter name="url" value="http://bankofamerica.com"/>
+    <parameter name="url" value="https://promotions.bankofamerica.com/consumer/multiproduct?cm_mmc=ENT-Consumer-_-MSN-PS-_-bank_of_america-_-Brand_CoreBrand&cq_src=bing_adscq_cmp=50831638cq_term=bank%20of%20americacq_net=ocq_plt=bpgclid=1526481aa78314de864f2c87594b8fc9gclsrc=3p.dsmsclkid=1526481aa78314de864f2c87594b8fc9"/>
 
 </suite>
