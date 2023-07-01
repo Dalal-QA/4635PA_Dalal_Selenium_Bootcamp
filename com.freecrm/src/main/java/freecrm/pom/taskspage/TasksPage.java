@@ -37,6 +37,7 @@ public class TasksPage extends BasePage {
 
    }
 
+
  public void clickOnAssignToDropDown(){
        safeClickOnElement(assignedToDropDown);
  }
@@ -81,6 +82,7 @@ public class TasksPage extends BasePage {
 
 public void doAddNewTask(String title){
        enterTitle(title);
+
        clickOnAssignToDropDown();
        selectFromTheDropDown();
        clickAndSelectOnDueDateBox();
