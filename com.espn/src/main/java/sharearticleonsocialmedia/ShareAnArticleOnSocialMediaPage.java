@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class ShareAnArticleOnSocialMediaPage extends BasePage {
 
-    @FindBy(xpath = "//h2[@class='contentItem__title contentItem__title--hero contentItem__title--story']")
+    @FindBy(xpath = "//*[@id=\"news-feed\"]/article[1]/section/a/div/div[3]/h2")
     public WebElement soccerArticle;
 
 

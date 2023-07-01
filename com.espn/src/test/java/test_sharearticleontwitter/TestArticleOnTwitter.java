@@ -16,7 +16,7 @@ public class TestArticleOnTwitter extends BasePage {
 
         HomePage homePage = new HomePage();
         ResultPage resultPage= new ResultPage();
-        //webDriverWait.until(isElementVisible(homePage.soccerButton),(homePage.clickOnSoccerButton()));
+        homePage.clickOnSoccerButton();
 
         ShareAnArticleOnSocialMediaPage shareAnArticleOnSocialMediaPage= new ShareAnArticleOnSocialMediaPage();
         shareAnArticleOnSocialMediaPage.clickOnSoccerArticle();

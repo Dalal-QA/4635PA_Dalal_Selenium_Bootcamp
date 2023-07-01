@@ -21,7 +21,7 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//input[@type='submit']")
     public WebElement searchButton;
 
-    @FindBy(xpath = "//input[@type='submit']")
+    @FindBy(xpath = "//a[@name='&lpos=sitenavdefault+sitenav_soccer']//span[@class='link-text']")
     public WebElement soccerButton;
 
 
