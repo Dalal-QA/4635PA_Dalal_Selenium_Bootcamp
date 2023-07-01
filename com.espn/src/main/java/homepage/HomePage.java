@@ -24,6 +24,20 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[@name='&lpos=sitenavdefault+sitenav_soccer']//span[@class='link-text']")
     public WebElement soccerButton;
 
+    @FindBy(xpath = "//article[@id='sideLogin-left-rail']//button[@class='button-alt med'][normalize-space()='Log In']")
+    public WebElement logInLink;
+
+    @FindBy(name= "oneid-iframe")
+    public WebElement iFrameLogin;
+    @FindBy(xpath="//input[@id='InputIdentityFlowValue']")
+    public WebElement emailInput;
+    @FindBy(xpath="//button[@id='BtnSubmit']")
+    public WebElement continueButton ;
+    @FindBy(xpath = "//input[@id='InputPassword']")
+    public WebElement passwordInputField;
+    @FindBy(xpath ="//button[@id='BtnSubmit']")
+    public WebElement logInButton;
+
 
     public void clickOnSearchIcon(){
         safeClickOnElement(searchIcon);
@@ -46,5 +60,32 @@ public class HomePage extends BasePage {
     public ResultPage clickOnSoccerButton(){
         safeClickOnElement(soccerButton);
         return new ResultPage();
+    }
+    public void clickOnLogIn(){
+        safeClickOnElement(logInLink);
+    }
+
+    public void inputEmail(String email){
+        driver.switchTo().frame("oneid-iframe");
+        sendKeysToElement(emailInput,email);
+    }
+
+    public void clickOnContinueButton(){
+        safeClickOnElement(continueButton);
+    }
+    public void inputPassword(String password){
+        sendKeysToElement(passwordInputField,password);
+    }
+    public void clickOnLogInButton(){
+        safeClickOnElement(logInButton);
+    }
+
+    public void doLogin(String email, String password){
+        clickOnLogIn();
+
+        inputEmail(email);
+        clickOnContinueButton();
+        inputPassword(password);
+        clickOnLogInButton();
     }
 }
