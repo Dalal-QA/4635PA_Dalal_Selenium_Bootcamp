@@ -19,6 +19,7 @@
             <class name="test_authentication.Test_Authentication"/>
             <class name="test_search.TestSearch"/>
             <class name="test_videoplayback.TestPlayBackFunctionality"/>
+            <class name="test_sharearticleontwitter.TestArticleOnTwitter"/>
 
 
         </classes>
