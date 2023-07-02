@@ -38,6 +38,19 @@ public class HomePage extends BasePage {
     @FindBy(xpath ="//button[@id='BtnSubmit']")
     public WebElement logInButton;
 
+    @FindBy(xpath ="//*[@id='submenu-button-submenu-sportsactivemenusoccer']")
+    public WebElement dropDownSoccerSection;
+    @FindBy(xpath ="//span[@class='video-play-button video-play-button--onefeed']")
+    public WebElement videoButton;
+    @FindBy(xpath ="//*[@id=\"vjs_video_3\"]/div[6]/button[1]")
+    public WebElement pauseButton;
+    @FindBy(xpath ="//button[@class='vjs-mute-control vjs-control vjs-button vjs-vol-3']")
+    public WebElement muteButton;
+
+    @FindBy(xpath ="//*[@id=\"global-header\"]/div[2]/ul/li[2]/div/div/ul[1]/li[9]/a")
+    public WebElement logoutButton;
+    @FindBy(xpath ="//a[@id='global-user-trigger']")
+    public WebElement userIcon;
 
     public void clickOnSearchIcon(){
         safeClickOnElement(searchIcon);
@@ -87,5 +100,28 @@ public class HomePage extends BasePage {
         clickOnContinueButton();
         inputPassword(password);
         clickOnLogInButton();
+    }
+    public void hoverOverSoccer(){
+       hoverOverElement(soccerButton);
+    }
+    public void clickOnVideoButton(){
+        safeClickOnElement(videoButton);
+    }
+    public void pauseTheVideo(){
+        safeClickOnElement(pauseButton);
+    }
+    public void muteTheVideo(){
+        safeClickOnElement(muteButton);
+    }
+
+    public void doPlayVideo(){
+        clickOnVideoButton();
+        pauseTheVideo();
+        muteTheVideo();
+    }
+    public WebElement assertLogin(){
+        hoverOverElement(userIcon);
+        isElementVisible(logoutButton);
+        return logoutButton;
     }
 }
