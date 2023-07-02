@@ -11,6 +11,16 @@ import utils.ExcelData;
 
 public class TestAuthentication extends BasePage {
 
+    /*Test Case: Login to BMW Website
+    *1. Navigate to the BMW website (https://www.bmw.com).
+    *2.Click on the "Login" button/link.
+    *4.Enter the valid login credentials (username and password) in the appropriate input fields
+    *5.Click on the "Login" button.
+    *6.Check if the user is redirected to the expected page after successful login.
+    *7.Validate that the profile information is displayed on the page to confirm successful login.
+    *
+     */
+
     @Test(priority= 1, groups= {"BAT"},dataProvider = "loginDataProvider")
 
     public void testLogin(String email,String password){
