@@ -18,14 +18,16 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "/html/body/div[2]/div/div/div[2]/div[5]/div/div[1]/div/div[3]/div/form/div")
     public WebElement searchIcon;
-    @FindBy(xpath = "//div[@class='globalnav-primary-search-results bmw-grid-col-default-25 bmw-grid-col-lg-10 bmw-grid-col-lg-offset-14 globalnav-primary-search-results--active']//input[@name='site search']")
+    @FindBy(xpath = "/html/body/div[3]/div/div/div[4]/div/div/div[1]/form/div/input")
     public WebElement searchBar;
-
+//html/body/div[3]/div/div/div[4]/div/div/div[1]/form/div/input
     @FindBy(xpath = "//div[@class='globalnav-primary-search-results bmw-grid-col-default-25 bmw-grid-col-lg-10 bmw-grid-col-lg-offset-14 globalnav-primary-search-results--active']//a[.='MyBMW']")
     public WebElement myBmwOption;
 
     @FindBy(xpath = "//a[@href='/vehicles/all-electric/ix/sports-activity-vehicle/overview.html.html']")
     public WebElement vehicleModel;
+    @FindBy(xpath = "//*[@id=\"destination_publishing_iframe_bmwmini_0\"]")
+    public WebElement iframeSearchBar;
 
 
 
@@ -39,6 +41,7 @@ public class HomePage extends BasePage {
     }
 
     public void enterSearchTerm(String model, String year) {
+        switchToFrameByElement(iframeSearchBar);
         sendKeysToElement(searchBar, model);
         sendKeysToElement(searchBar, year);
         searchBar.sendKeys(Keys.RETURN);
@@ -55,4 +58,14 @@ public class HomePage extends BasePage {
     }
 
 
+    public void enterSearchTerm1(String model) {
+        clickOnSearchIcon();
+        sendKeysToElement(searchBar, model);
+        searchBar.sendKeys(Keys.RETURN);
+    }
+
+    public void doSearch1(String model) {
+        clickOnSearchIcon();
+        enterSearchTerm1(model);
+    }
 }
