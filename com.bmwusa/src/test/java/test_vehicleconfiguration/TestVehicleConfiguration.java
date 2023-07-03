@@ -5,14 +5,20 @@ import homepage.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import searchpage.ModelSelectedPage;
-/*Test Case:Vehicle configuration
-*1.Navigate to bmwusa.com.
-*2.Select a specific model.
-* Click on "Build your own"
-*3.Customize the vehicle by selecting various options (color, trim, packages).
-*4.Verify that the selected options are reflected in the configured vehicle.
- */
+
+
+
+
 public class TestVehicleConfiguration extends BasePage {
+
+
+    /*Test Case:Vehicle configuration
+     *1.Navigate to bmwusa.com.
+     *2.Select a specific model.
+     * Click on "Build your own"
+     *3.Customize the vehicle by selecting various options (color, trim, packages).
+     *4.Verify that the selected options are reflected in the configured vehicle.
+     */
     @Test(priority = 1, groups = {"BAT"})
 
     public void testVehicleConfiguration() {
