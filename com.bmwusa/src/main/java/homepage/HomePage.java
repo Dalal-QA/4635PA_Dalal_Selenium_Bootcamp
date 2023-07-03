@@ -20,7 +20,7 @@ public class HomePage extends BasePage {
     public WebElement searchIcon;
     @FindBy(xpath = "/html/body/div[3]/div/div/div[4]/div/div/div[1]/form/div/input")
     public WebElement searchBar;
-//html/body/div[3]/div/div/div[4]/div/div/div[1]/form/div/input
+
     @FindBy(xpath = "//div[@class='globalnav-primary-search-results bmw-grid-col-default-25 bmw-grid-col-lg-10 bmw-grid-col-lg-offset-14 globalnav-primary-search-results--active']//a[.='MyBMW']")
     public WebElement myBmwOption;
 
@@ -41,7 +41,7 @@ public class HomePage extends BasePage {
     }
 
     public void enterSearchTerm(String model, String year) {
-        switchToFrameByElement(iframeSearchBar);
+        //switchToFrameByElement(iframeSearchBar);
         sendKeysToElement(searchBar, model);
         sendKeysToElement(searchBar, year);
         searchBar.sendKeys(Keys.RETURN);
@@ -49,6 +49,9 @@ public class HomePage extends BasePage {
 
     public void doSearch(String model, String year) {
         clickOnSearchIcon();
+        driver.navigate().refresh();
+        clickOnSearchIcon();
+        searchBar.click();
         enterSearchTerm(model, year);
     }
 
@@ -57,15 +60,4 @@ public class HomePage extends BasePage {
         return new ModelSelectedPage();
     }
 
-
-    public void enterSearchTerm1(String model) {
-        clickOnSearchIcon();
-        sendKeysToElement(searchBar, model);
-        searchBar.sendKeys(Keys.RETURN);
-    }
-
-    public void doSearch1(String model) {
-        clickOnSearchIcon();
-        enterSearchTerm1(model);
-    }
 }

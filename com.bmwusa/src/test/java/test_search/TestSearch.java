@@ -36,13 +36,5 @@ public class TestSearch extends BasePage {
         return data;
 
     }
-
-    @Test(priority = 1, groups = {"BAT"})
-
-    public void testSearch1() {
-        HomePage homePage = new HomePage();
-        String model="BMW M4";
-        homePage.doSearch1(model);
-
-    }
+    
 }

@@ -28,26 +28,45 @@ public class ShoppingPage extends BasePage {
 
     @FindBy(xpath = "//span[.='Lookup']")
     public WebElement lookupButton ;
+    @FindBy(xpath = "//h1[@class='product-name primary-header']")
+    public WebElement descriptiveAccessory;
+
+
+    public void clickOnShopNowButton() {
+        safeClickOnElement(shopNowButton);
+    }
+    public void clickOnYearButton() {
+        safeClickOnElement(yearButton);;
+    }
+
+    public void clickOnSerieButton() {
+        safeClickOnElement(serieButton);
+    }
+    public void clickOnModelButton() {
+        safeClickOnElement(modelButton);
+    }
+    public void clickOnAccessoryButton() {
+        safeClickOnElement(accessoryLink);
+    }
+    public void clickOnAddToCart() {
+        safeClickOnElement(accessoryLink);
+    }
 
    public void enterDealerLocation(String zipCode){
        clearSendKeysToElement(dealerNameInputField,zipCode);
    }
 
-   public void clickOnLockUpButton(){
+   public void clickOnLockUpButton() {
        safeClickOnElement(lookupButton);
    }
 
     public void doShop(){
-        safeClickOnElement(shopNowButton);
-
-        safeClickOnElement(yearButton);
-        safeClickOnElement(serieButton);
-        safeClickOnElement(modelButton);
-        safeClickOnElement(accessoryLink);
-        safeClickOnElement(addToCart);
-
+       clickOnShopNowButton();
+       clickOnYearButton();
+       clickOnSerieButton();
+       clickOnModelButton();
+       clickOnAccessoryButton();
 
     }
-
 
 }
