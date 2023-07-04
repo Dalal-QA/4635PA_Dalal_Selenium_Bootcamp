@@ -11,6 +11,14 @@ import utils.ExcelData;
 
 public class TestSortSearchResult extends BasePage {
 
+//Test Case: Test the sorting functionality on the verizon.com website
+//1.Navigate to the verizon.com website (https://www.verizon.com).
+//2.Click on the search bar to activate it.
+//3.Enter a specific keyword or search query related to your test case ("iPhone 14 ", "iphone 13","iPhone 14 Plus").
+//4.Press the Enter key or click the search button/icon.
+//5.Select a specific sorting option from the available choices ( "Rating: Highest First" "Color : Black").
+//6.Observe the search results and ensure that they are re-ordered according to the selected sorting option.
+
     @Test(priority = 1, groups = {"BAT"}, dataProvider = "sortDataProvider")
 
     public void testSort(String searchTerm) throws InterruptedException {

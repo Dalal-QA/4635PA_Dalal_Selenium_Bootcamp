@@ -17,7 +17,6 @@ public class ResultSearchPage extends BasePage {
     public WebElement colorDropDown;
 
     @FindBy(xpath = "//span[@class='ChildWrapper-VDS__sc-19df7fd-0 kSwbUn']//span[contains(.,'Black (8)')]")
-    //div[@class='AccordionList-VDS__sc-1xsaiao-1 bxDMNB']//span[@class='ChildWrapper-VDS__sc-19df7fd-0 cuYKPc']//span[contains(.,'Black (9)')]
     public WebElement optionBlackBox;
     @FindBy(xpath = "//button[@class='sc-gZMcBi iYWpSa']")
     public WebElement viewResultButton;
