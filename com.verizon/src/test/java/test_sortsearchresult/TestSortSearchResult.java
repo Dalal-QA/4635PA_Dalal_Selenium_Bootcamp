@@ -21,7 +21,7 @@ public class TestSortSearchResult extends BasePage {
 
     @Test(priority = 1, groups = {"BAT"}, dataProvider = "sortDataProvider")
 
-    public void testSort(String searchTerm) throws InterruptedException {
+    public void testSort(String searchTerm)  {
         HomePage homePage = new HomePage();
         SearchPage searchPage= homePage.clickOnSearchButton();
         ResultSearchPage resultSearchPage=searchPage.doSearch(searchTerm);
