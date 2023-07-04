@@ -1,9 +1,11 @@
 package homepage;
 
 import base.BasePage;
+import futurechartspage.FutureChartPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import resultpage.ResultPage;
 
 public class HomePage extends BasePage {
 
@@ -22,30 +24,88 @@ public class HomePage extends BasePage {
     public WebElement sigInButton;
     @FindBy(xpath = "//span[@class='myAccount topBarText']")
     public WebElement userName;
+    @FindBy(xpath = "//input[@class='searchText arial_12 lightgrayFont js-main-search-bar']")
+    public WebElement searchBar;
+
+    @FindBy(xpath = "//label[@class='searchGlassIcon js-magnifying-glass-icon']")
+    public WebElement searchIcon;
+    @FindBy(xpath = "//div[@class='js-section-wrapper searchSection allSection']/div[@class='resultsSum']")
+    public WebElement resultsSum;
+
+    @FindBy(xpath = "//span[@class='myAccount topBarText']")
+    public WebElement myNameTopBarText;
+    @FindBy(xpath = "//a[normalize-space()='Sign out']")
+    public WebElement signOutButton;
+
+    @FindBy(xpath = "//a[@href='//www.investing.com/charts/']")
+    public WebElement chartsLink;
+    @FindBy(xpath = "//a[.='Futures Chart']")
+    public WebElement futureChartsButton;
 
 
-    public void clickOnLoginLink(){
+    public void clickOnLoginLink() {
         safeClickOnElement(loginLink);
 
     }
-    public void enterEmailAddress(String emailAddress){
+
+    public void enterEmailAddress(String emailAddress) {
         safeClickOnElement(emailInputField);
 
         sendKeysToElement(emailInputField, emailAddress);
     }
-    public void enterPassword(String password){
-        sendKeysToElement(passwordInputField,password);
-    }
-    public void clickSignIn(){
-       safeClickOnElement(sigInButton);
+
+    public void enterPassword(String password) {
+        sendKeysToElement(passwordInputField, password);
     }
 
-    public void doSignIn(String emailAddress, String password){
+    public void clickSignIn() {
+        safeClickOnElement(sigInButton);
+    }
+
+    public void doSignIn(String emailAddress, String password) {
         clickOnLoginLink();
         enterEmailAddress(emailAddress);
         enterPassword(password);
         clickSignIn();
     }
 
+    public void enterSearch(String searchTerm) {
+        sendKeysToElement(searchBar, searchTerm);
     }
+
+    public void clickOnSearchIcon() {
+        safeClickOnElement(searchIcon);
+    }
+
+    public ResultPage doSearch(String searchTerm) {
+        enterSearch(searchTerm);
+        clickOnSearchIcon();
+        return new ResultPage();
+    }
+
+    public void hoverOverMyNameText() {
+        hoverOverElement(myNameTopBarText);
+    }
+
+    public void clickOnSignOutButton() {
+        safeClickOnElement(signOutButton);
+    }
+
+    public void doSignOut() {
+        hoverOverMyNameText();
+        clickOnSignOutButton();
+    }
+
+    public void clickOnChartsLink() {
+        safeClickOnElement(chartsLink);
+    }
+
+    public FutureChartPage clickOnFuturesChart() {
+        safeClickOnElement(futureChartsButton);
+      return new FutureChartPage();
+    }
+
+
+}
+
 

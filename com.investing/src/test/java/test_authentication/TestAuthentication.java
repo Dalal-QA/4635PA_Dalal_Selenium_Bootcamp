@@ -35,4 +35,24 @@ public class TestAuthentication extends BasePage {
         return data;
 
     }
+
+    @Test(priority= 2, groups= {"BAT"},dataProvider = "logoutDataProvider")
+
+    public void testLogout(String email,String password){
+        HomePage homePage = new HomePage();
+        homePage.doSignIn(email, password);
+        homePage.doSignOut();
+        Assert.assertTrue(isElementVisible(homePage.loginLink));
+    }
+    @DataProvider(name="logoutDataProvider")
+    public String[][] logoutDataProvider()
+    {
+
+        String path= System.getProperty("user.dir")+"\\src\\test\\resources\\test_data.xlsx";
+        ExcelData ex=new ExcelData(path);
+        String data[][]=ex.readStringArrays("doLogIn");
+        return data;
+
+    }
+
 }
