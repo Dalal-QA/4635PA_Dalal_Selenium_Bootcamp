@@ -40,6 +40,9 @@ public class TestShoppingCart extends BasePage {
 
         Assert.assertTrue(isElementVisible(shoppingPage.descriptiveAccessory));
 //        String zipCode="19145";
+//        shoppingPage.clickOnAddToCart();
+//        driver.navigate().refresh();
+//        shoppingPage.clickOnDealerNameInputField();
 //        shoppingPage.enterDealerLocation(zipCode);
 //
 //        shoppingPage.clickOnLockUpButton();

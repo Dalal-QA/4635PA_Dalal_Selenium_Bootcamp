@@ -350,6 +350,12 @@ public class BasePage {
     }
 
 
+    public void clickAndHitEnter(WebElement element,String data) {
+        Actions actions = new Actions(driver);
+
+        webDriverWait.until(ExpectedConditions.visibilityOf(element));
+        actions.moveToElement(element).click(element).sendKeys(data).sendKeys(Keys.ENTER).build().perform();
+    }
     // endregion
 
 }

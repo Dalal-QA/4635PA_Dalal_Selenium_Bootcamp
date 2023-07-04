@@ -52,6 +52,10 @@ public class ShoppingPage extends BasePage {
         safeClickOnElement(accessoryLink);
     }
 
+    public void clickOnDealerNameInputField(){
+        safeClickOnElement(dealerNameInputField);
+    }
+
    public void enterDealerLocation(String zipCode){
        clearSendKeysToElement(dealerNameInputField,zipCode);
    }
