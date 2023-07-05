@@ -19,6 +19,7 @@
             <class name="test_authentication.TestAuthentication"/>
             <class name="test_search.TestSearch"/>
             <class name="test_accountsettings.TestAccountSettings"/>
+            <class name="test_resetpassword.TestResetPassword"/>
 
         </classes>
     </test>

@@ -40,7 +40,7 @@ public class TestAuthentication extends BasePage {
     }
 
 
-    @Test(priority= 1, groups= {"BAT"},dataProvider = "signindataprovider")
+    @Test(priority= 1, groups= {"BAT"},dataProvider = "signInDataProvider")
     public void testUserSignIn(String email,String password){
         SignInPage signInPage = new SignInPage();
         HomePage homePage = new HomePage();
@@ -50,7 +50,7 @@ public class TestAuthentication extends BasePage {
         Assert.assertTrue(checkElementPresent(homePage.loggedInUsername));
     }
 
-    @DataProvider(name="signindataprovider")
+    @DataProvider(name="signInDataProvider")
     public Object[][] testSignInUserDataProvider()
     {
 
@@ -62,7 +62,7 @@ public class TestAuthentication extends BasePage {
     }
 
 
-    /* Test Case :Sign In to Apartments.com
+    /* Test Case :Sign Out to Apartments.com
      * 1.Navigate to URl "www.apartments.com"
      * 2.Click on the "Sign In" button/link.
      * 3.Enter a valid email address in the email input field
@@ -75,7 +75,7 @@ public class TestAuthentication extends BasePage {
      *
      *  */
 
-    @Test(priority = 2, groups={"BAT"}, dataProvider = "signindataprovider")
+    @Test(priority = 2, groups={"BAT"}, dataProvider = "signOutDataProvider")
 
     public void testLogOut(String email,String pass){
         HomePage homePage= new HomePage();
@@ -89,6 +89,16 @@ public class TestAuthentication extends BasePage {
         homePage.doSignOut();
 
         Assert.assertTrue(isElementVisible(homePage.signInLink));
+    }
+    @DataProvider(name="signOutDataProvider")
+    public Object[][] testSignOutDataProvider()
+    {
+
+        String path= System.getProperty("user.dir")+"\\src\\test\\resources\\test_data.xlsx";
+        ExcelData ex=new ExcelData(path);
+        String data[][]=ex.readStringArrays("doSignIn");
+        return data;
+
     }
 
     }

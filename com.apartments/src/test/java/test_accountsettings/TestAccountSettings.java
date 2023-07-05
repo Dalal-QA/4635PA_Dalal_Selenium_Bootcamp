@@ -40,7 +40,7 @@ public class TestAccountSettings extends BasePage {
         accountSettingPage.doSaveChanges(phoneNumber,streetAddress, city);
 
     }
-    @Test(priority= 6, groups= {"BAT"},dataProvider = "accountsettingsdataprovider")
+    @Test(priority= 6, groups= {"BAT"},dataProvider = "accountSettingsDataProvider")
 
     public void testDoSaveUpdates(String phoneNumber,String streetAddress,String city){
         HomePage homePage = new HomePage();
@@ -58,7 +58,7 @@ public class TestAccountSettings extends BasePage {
 
 
     }
-    @DataProvider(name="accountsettingsdataprovider")
+    @DataProvider(name="accountSettingsDataProvider")
     public Object[][] accountSettingDataProvider()
     {
 

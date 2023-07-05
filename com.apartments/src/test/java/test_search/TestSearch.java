@@ -20,7 +20,7 @@ public class TestSearch extends BasePage {
 
  */
 
-    @Test(priority= 3, groups= {"BAT"},dataProvider = "searchdataprovider")
+    @Test(priority= 3, groups= {"BAT"},dataProvider = "searchDataProvider")
 
     public void testDoSearch(String searchTerm){
         HomePage homePage = new HomePage();
@@ -41,7 +41,7 @@ public class TestSearch extends BasePage {
         Assert.assertTrue(isElementVisible(resultSearchPage.searchResult));
 
     }
-    @DataProvider(name="searchdataprovider")
+    @DataProvider(name="searchDataProvider")
     public Object[][] searchDataProvider()
     {
 
