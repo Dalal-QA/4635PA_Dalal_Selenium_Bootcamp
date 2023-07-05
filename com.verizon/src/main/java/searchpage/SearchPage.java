@@ -26,8 +26,16 @@ public class SearchPage extends BasePage {
     @FindBy(xpath = "//input[@id='zipcode']")
     public WebElement zipCodeInputField;
 
-    @FindBy(xpath = "//button[@class='defaultPrimaryCTA ']")
+    @FindBy(xpath = "//*[@id=\"add-to-cart-modal-id\"]/div/form/button")
     public WebElement confirmLocationButton;
+
+    @FindBy(xpath = "//*[@id='universal_pixel_xjq5euo']")
+    public WebElement ifram2;
+
+    @FindBy(xpath = "//button[@class='modalButton fontSize_12 NHaasDS55Rg background_FF onlyRightMargin margin8']")
+    public WebElement newCustomerButton;
+    @FindBy(xpath = "//span[.='has been added to cart.']")
+    public WebElement confirmationText ;
     public void enterSearchTerm(String searchTerm){
         sendKeysToElement(inputSearchBox, searchTerm);
     }
@@ -51,13 +59,32 @@ public class SearchPage extends BasePage {
 
     public void clickOnProductLink(){
         safeClickOnElement(productLink);
+
+    }
+    public void clickOnContinueButton(){
+        safeClickOnElement(continueButton);
         switchToFrameByElement(iframe);
     }
 
     public void enterZipCode(String zipCode){
+        safeClickOnElement(zipCodeInputField);
         sendKeysToElement(zipCodeInputField,zipCode);
     }
     public void clickOnConfirmLocation(){
         safeClickOnElement(confirmLocationButton);
+        switchToFrameByElement(ifram2);
+    }
+    public void clickOnNewCustomer(){
+        safeClickOnElement(newCustomerButton);
+    }
+
+    public void doAddToCart(String zipCode){
+        clickOnProductLink();
+        clickOnContinueButton();
+        enterZipCode(zipCode);
+        clickOnConfirmLocation();
+        clickOnConfirmLocation();
+        clickOnNewCustomer();
+
     }
 }

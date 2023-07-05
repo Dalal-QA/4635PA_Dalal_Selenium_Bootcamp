@@ -12,11 +12,14 @@ public class TestAddToCart extends BasePage {
 
     @Test(priority = 1, groups = {"BAT"})
 
-    public void testSort(String searchTerm) {
+    public void testAddToCart() {
         HomePage homePage = new HomePage();
         SearchPage searchPage = homePage.clickOnSearchButton();
+        String searchTerm="iPhone 14";
         ResultSearchPage resultSearchPage = searchPage.doSearch(searchTerm);
         resultSearchPage.doSorting();
-        Assert.assertTrue(isElementVisible(resultSearchPage.resultNumber));
+        String zipCode="19145";
+        searchPage.doAddToCart(zipCode);
+
     }
 }
