@@ -23,7 +23,7 @@ public class ShoppingPage extends BasePage {
 
     @FindBy(xpath = "//button[@id='btnAddToCart']/span[@class='primary-text']")
     public WebElement addToCart;
-    @FindBy(xpath = "//*[@id=\"lblsearchQuery\"]")
+    @FindBy(xpath = "//*[@id='lblsearchQuery']")
     public WebElement dealerNameInputField;
 
     @FindBy(xpath = "//span[.='Lookup']")
@@ -49,7 +49,7 @@ public class ShoppingPage extends BasePage {
         safeClickOnElement(accessoryLink);
     }
     public void clickOnAddToCart() {
-        safeClickOnElement(accessoryLink);
+        safeClickOnElement(addToCart);
     }
 
     public void clickOnDealerNameInputField(){
