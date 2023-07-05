@@ -11,7 +11,7 @@ import shoppingpage.ShoppingPage;
 
 public class TestShoppingCart extends BasePage {
 
-    /*Test Case: TEST the scenario of selecting an accessory for your My BMW on the bmwusa.com website.
+    /*Test Case: TEST the scenario of selecting an accessory for My BMW on the bmwusa.com website.
     *1.Navigate to the bmwusa.com website (https://www.bmwusa.com).
     *2.Click on the "Login" button/link.
     *3.Enter the valid login credentials (username and password) in the appropriate input fields
