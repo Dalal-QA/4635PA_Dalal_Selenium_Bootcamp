@@ -65,7 +65,7 @@ public class TestAuthentication extends BasePage {
         Assert.assertTrue(isElementVisible(logInPage.LoginButton));
     }
 
-    @Test(priority= 1, groups= {"BAT"},dataProvider = "logindataprovider")
+    @Test(priority= 1, groups= {"BAT"},dataProvider = "loginDataProvider")
 
     public void testLogin(String email,String pass){
         HomePage homePage = new HomePage();
@@ -74,7 +74,7 @@ public class TestAuthentication extends BasePage {
         Assert.assertTrue(isElementVisible(dashboardUserPage.userName));
 
     }
-    @DataProvider(name="logindataprovider")
+    @DataProvider(name="loginDataProvider")
     public String[][] loginDataProvider()
     {
 
@@ -85,7 +85,7 @@ public class TestAuthentication extends BasePage {
 
     }
 
-    @Test(priority = 2, groups={"smoke"}, dataProvider = "logindataprovider")
+    @Test(priority = 2, groups={"smoke"}, dataProvider = "logOutDataProvider")
 
     public void testLogOut(String email,String pass){
         HomePage homePage= new HomePage();
@@ -100,7 +100,16 @@ public class TestAuthentication extends BasePage {
 
         Assert.assertTrue(isElementVisible(loginPage.LoginButton));
     }
+    @DataProvider(name="logOutDataProvider")
+    public String[][] logOutDataProvider()
+    {
 
+        String path= System.getProperty("user.dir")+"\\src\\test\\resources\\test_data.xlsx";
+        ExcelData ex=new ExcelData(path);
+        String data[][]=ex.readStringArrays("doSignIn");
+        return data;
+
+    }
 
 }
 

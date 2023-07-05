@@ -24,7 +24,7 @@ public class TestCreateNewContact extends BasePage {
  */
 
 
-    @Test(priority= 2, groups= {"BAT"},dataProvider = "createcontactdataprovider")
+    @Test(priority= 2, groups= {"BAT"},dataProvider = "createContactDataProvider")
 
 
     public void testDoAddNewContact(String firstName, String lastName,String companyName,String email,
@@ -44,7 +44,7 @@ public class TestCreateNewContact extends BasePage {
         Assert.assertTrue(isElementVisible(contactsAddedPage.redIcon));
 
     }
-    @DataProvider(name="createcontactdataprovider")
+    @DataProvider(name="createContactDataProvider")
     public Object [][] addContactDataProvider() {
 
         String path= System.getProperty("user.dir")+"\\src\\test\\resources\\test_data.xlsx";

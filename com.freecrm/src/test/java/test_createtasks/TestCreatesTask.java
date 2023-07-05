@@ -21,7 +21,7 @@ public class TestCreatesTask extends BasePage {
 * 6.Verify that the task is successfully created and added to the task list
  */
 
-    @Test(priority = 1,groups={"smoke"},dataProvider = "createtaskdataprovider")
+    @Test(priority = 1,groups={"smoke"},dataProvider = "createTaskDataProvider")
     public void testCreateTask(String title){
 
         HomePage homePage =new HomePage();
@@ -38,7 +38,7 @@ public class TestCreatesTask extends BasePage {
 
     }
 
-    @DataProvider(name="createtaskdataprovider")
+    @DataProvider(name="createTaskDataProvider")
     public Object [][] addContactDataProvider() {
 
         String path= System.getProperty("user.dir")+"\\src\\test\\resources\\test_data.xlsx";

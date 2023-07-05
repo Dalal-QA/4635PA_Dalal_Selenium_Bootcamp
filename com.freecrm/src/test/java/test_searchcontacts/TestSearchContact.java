@@ -22,7 +22,7 @@ public class TestSearchContact extends BasePage {
     *
      */
 
-    @Test(priority= 1, groups= {"BAT"},dataProvider = "searchcontactsdataprovider")
+    @Test(priority= 1, groups= {"BAT"},dataProvider = "searchContactsDataProvider")
 
     public void testSearchContacts(String value){
         HomePage homePage = new HomePage();
@@ -36,7 +36,7 @@ public class TestSearchContact extends BasePage {
         Assert.assertTrue(isElementVisible(contactPage.filterApplied));
 
     }
-    @DataProvider(name="searchcontactsdataprovider")
+    @DataProvider(name="searchContactsDataProvider")
     public String[][] contactsDataProvider()
     {
 
