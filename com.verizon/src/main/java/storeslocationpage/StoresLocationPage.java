@@ -5,9 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.awt.*;
-import java.awt.event.KeyEvent;
-
 public class StoresLocationPage extends BasePage {
 
     public StoresLocationPage() {
@@ -18,7 +15,7 @@ public class StoresLocationPage extends BasePage {
     public WebElement useMyLocationLink;
     @FindBy(xpath = "//input[@id='search']")
     public WebElement searchInputField;
-    @FindBy(xpath = "//div[@id='resultListId']")
+    @FindBy(css = ".react-autosuggest__suggestion--first > #resultListId")
     public WebElement matchingSearchOption;
 
 
@@ -30,20 +27,12 @@ public class StoresLocationPage extends BasePage {
        safeClickOnElement(useMyLocationLink);
    }
 
-    public void pressEnterKey(){
-        try {
-            Robot robot = new Robot();
-            robot.keyPress(KeyEvent.VK_ENTER);
-            robot.keyRelease(KeyEvent.VK_ENTER);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+
 
     public void  enterZipCode(String zipCode) {
         sendKeysToElement(searchInputField, zipCode);
         searchInputField.click();
-        pressEnterKey();
+
     }
 
 
@@ -51,9 +40,10 @@ public class StoresLocationPage extends BasePage {
         safeClickOnElement(matchingSearchOption);
 
     }
-    public void doFindStores(String zipCode){
+    public StoreLocationResult doFindStores(String zipCode){
        clickOnUseMyLocation();
         enterZipCode(zipCode);
-        //clickOnMatchingOption();
+        clickOnMatchingOption();
+        return new StoreLocationResult();
     }
 }

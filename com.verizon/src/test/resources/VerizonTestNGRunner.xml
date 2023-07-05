@@ -15,6 +15,7 @@
             <class name="test_sortsearchresult.TestSortSearchResult"/>
             <class name="test_addtocard.TestAddToCart"/>
             <class name="test_searchstores.TestSearchStores"/>
+            <class name="test_addtofavorite.TestAddToFavorite"/>
 
         </classes>
     </test>

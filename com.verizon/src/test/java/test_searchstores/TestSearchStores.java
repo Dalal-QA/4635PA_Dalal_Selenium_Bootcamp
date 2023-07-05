@@ -26,7 +26,7 @@ public class TestSearchStores extends BasePage {
         storesLocationPage.doFindStores(zipCode);
 
 
-        //Assert.assertTrue(isElementVisible(storesLocationPage.searchResultTitle));
+        Assert.assertTrue(isElementVisible(storesLocationPage.searchResultTitle));
 
     }
 
