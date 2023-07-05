@@ -39,14 +39,14 @@ public class TestSearch extends BasePage {
      *3.Verify that the search results are displayed correctly based on the specified criteria
 
      */
-    @Test(priority = 1, groups = {"BAT"},dataProvider = "searchdataprovider")
+    @Test(priority = 1, groups = {"BAT"},dataProvider = "searchDataProvider")
 
     public void testDoSearch(String searchTerm) {
         HomePage homePage = new HomePage();
         SearchResultPage searchResultPage= homePage.doSearch(searchTerm);
         Assert.assertTrue(isElementVisible(searchResultPage.searchResult));
     }
-    @DataProvider(name="searchdataprovider")
+    @DataProvider(name="searchDataProvider")
     public Object[][] searchDataProvider()
     {
 

@@ -124,4 +124,15 @@ public class HomePage extends BasePage {
         isElementVisible(logoutButton);
         return logoutButton;
     }
+
+    public void doLogOut(){
+        hoverOverElement(userIcon);
+        safeClickOnElement(logoutButton);
+    }
+
+    public WebElement doAssetLogOut(){
+        hoverOverElement(userIcon);
+        isElementVisible(logInLink);
+        return logInLink;
+    }
 }
