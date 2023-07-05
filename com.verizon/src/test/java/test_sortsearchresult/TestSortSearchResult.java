@@ -19,6 +19,7 @@ public class TestSortSearchResult extends BasePage {
 //5.Select a specific sorting option from the available choices ( "Rating: Highest First" "Color : Black").
 //6.Observe the search results and ensure that they are re-ordered according to the selected sorting option.
 
+
     @Test(priority = 1, groups = {"BAT"}, dataProvider = "sortDataProvider")
 
     public void testSort(String searchTerm)  {

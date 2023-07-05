@@ -26,11 +26,11 @@ public class SearchPage extends BasePage {
     @FindBy(xpath = "//input[@id='zipcode']")
     public WebElement zipCodeInputField;
 
-    @FindBy(xpath = "//*[@id=\"add-to-cart-modal-id\"]/div/form/button")
+    @FindBy(xpath = "//button[@class='defaultPrimaryCTA ']")
     public WebElement confirmLocationButton;
 
-    @FindBy(xpath = "//*[@id='universal_pixel_xjq5euo']")
-    public WebElement ifram2;
+    @FindBy(xpath = "//iframe[@id='universal_pixel_xjq5euo']")
+    public WebElement iframe2;
 
     @FindBy(xpath = "//button[@class='modalButton fontSize_12 NHaasDS55Rg background_FF onlyRightMargin margin8']")
     public WebElement newCustomerButton;
@@ -63,7 +63,7 @@ public class SearchPage extends BasePage {
     }
     public void clickOnContinueButton(){
         safeClickOnElement(continueButton);
-        switchToFrameByElement(iframe);
+
     }
 
     public void enterZipCode(String zipCode){
@@ -72,7 +72,7 @@ public class SearchPage extends BasePage {
     }
     public void clickOnConfirmLocation(){
         safeClickOnElement(confirmLocationButton);
-        switchToFrameByElement(ifram2);
+
     }
     public void clickOnNewCustomer(){
         safeClickOnElement(newCustomerButton);
@@ -83,8 +83,8 @@ public class SearchPage extends BasePage {
         clickOnContinueButton();
         enterZipCode(zipCode);
         clickOnConfirmLocation();
-        clickOnConfirmLocation();
         clickOnNewCustomer();
+
 
     }
 }
