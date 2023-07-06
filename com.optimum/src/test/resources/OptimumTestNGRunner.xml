@@ -11,7 +11,7 @@
 
     <test name="test">
         <classes>
-<!--            <class name=""/>-->
+            <class name="test_availabilityofservice.TestAvailabilityOfService"/>
         </classes>
     </test>
 </suite>
