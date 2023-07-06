@@ -9,7 +9,12 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="http://mbusa.com"/>
 
-    <test name="test">
+    <test name="BAT">
+        <classes>
+            <class name="test_authentication.TestAuthentication"/>
+
+
+        </classes>
     </test>
 
 
