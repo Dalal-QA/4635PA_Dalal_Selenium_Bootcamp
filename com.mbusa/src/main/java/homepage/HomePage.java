@@ -42,9 +42,7 @@ public class HomePage extends BasePage {
     }
     public void clickOnOkButton()
     {
-
         safeClickOnElement(okButton);
-
     }
     public LoginPage doLogin(){
         getVisibleElement(myAccountButton);
