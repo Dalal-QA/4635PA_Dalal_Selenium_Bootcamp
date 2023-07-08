@@ -10,7 +10,7 @@ public class TestAuthentication extends BasePage {
 
     /*Test Case:  log in to StreetEasy
     *1.Open your web browser and go to the StreetEasy website (www.streeteasy.com).
-    *2.Click on the "Log in" link located at the top right corner of the homepage. This will take you to the login page.
+    *2.Click on the "Log in" link located in the top right corner of the homepage. This will take you to the login page.
     *3.Click on  "Log in with email" button.
     *4.Enter the email address associated with your StreetEasy account in the provided field.
     *5.Click on "Submit" button
