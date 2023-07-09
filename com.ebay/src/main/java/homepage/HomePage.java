@@ -1,6 +1,7 @@
 package homepage;
 
 import base.BasePage;
+import loginpage.LoginPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -14,6 +15,12 @@ public class HomePage extends BasePage {
     public WebElement searchBar;
     @FindBy(xpath = "//input[@id='gh-btn']")
     public WebElement searchButton;
+    @FindBy(xpath = "//span[@id='gh-ug']/a[.='Sign in']")
+    public WebElement signInLink;
+
+    @FindBy(xpath = "//button[@id='gh-ug'])")
+    public WebElement welcomeMessage;
+
 
 
     public void enterSearchTerm(String searchTerm){
@@ -27,5 +34,10 @@ public class HomePage extends BasePage {
         enterSearchTerm(searchTerm);
         clickOnSearchButton();
         return new ResultPage();
+    }
+
+    public LoginPage clickOnSignInLink(){
+        safeClickOnElement(signInLink);
+        return new LoginPage();
     }
 }
