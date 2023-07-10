@@ -6,6 +6,8 @@ import loginpage.LoginPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import shoppingpage.ShopPartsPage;
+import vehiclepage.VehiclePage;
 
 public class HomePage extends BasePage {
 
@@ -27,6 +29,11 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//span[@class='global-headerbutton-label global-headerbutton-utility-inner']")
     public WebElement usernameHeader;
+    @FindBy(xpath="//div[@class='full-height-hero__image-container full-height-hero__image-container--width']//a[.='Explore']")
+    public WebElement exploreButton;
+
+    @FindBy(xpath = "//span[.='Shopping']")
+    public WebElement shoppingLink;
 
     public void clickOnMyAccountButton(){
 
@@ -52,5 +59,14 @@ public class HomePage extends BasePage {
         clickOnLoginButton();
 
         return new LoginPage();
+    }
+
+    public VehiclePage clickOnExploreButton(){
+        safeClickOnElement(exploreButton);
+        return new VehiclePage();
+    }
+    public ShopPartsPage clickOnShoppingLink(){
+        safeClickOnElement(shoppingLink);
+        return new ShopPartsPage();
     }
 }
