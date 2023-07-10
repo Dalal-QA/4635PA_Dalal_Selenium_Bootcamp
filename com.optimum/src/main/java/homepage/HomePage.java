@@ -1,6 +1,8 @@
 package homepage;
 
+import addtocart.AddToCard;
 import base.BasePage;
+import contactuspage.ContactUsPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -21,6 +23,10 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath="//div[@class='widget-count']")
     public WebElement resultText;
+    @FindBy(xpath="//a[.='Contact us']")
+    public WebElement contactUsButton;
+    @FindBy(xpath = "//a[contains(.,'Shop plans')]")
+    public WebElement shopNowButton;
 
     public void enterStreetAddress(String address){
         sendKeysToElement(addressInputField,address);
@@ -37,6 +43,15 @@ public class HomePage extends BasePage {
         enterStreetAddress(streetAddress);
         enterZipCode(zipCode);
         clickOnCheckAvailabilityButton();
+    }
+
+    public ContactUsPage clickOnContactUs(){
+        safeClickOnElement(contactUsButton);
+        return new ContactUsPage();
+    }
+    public AddToCard clickOnShopButton(){
+        safeClickOnElement(shopNowButton);
+        return new AddToCard();
     }
 }
 
