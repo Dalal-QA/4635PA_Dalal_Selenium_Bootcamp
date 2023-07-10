@@ -11,7 +11,7 @@ import utils.ExcelData;
 
 public class TestAuthentication extends BasePage {
 
-//    Test Case : Login
+//    Test Case : Login with valid credentials
 //    Navigate to URL	https://magento.softwaretestingboard.com/
 //    Click ‘Sign In’ Link
 //    Enter valid email in email field input

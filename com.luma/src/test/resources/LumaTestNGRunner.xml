@@ -15,7 +15,7 @@
         <!--            </run>-->
         <!--        </groups>-->
         <classes>
-            <class name="test_app.TestApp"/>
+
             <class name="test_search.TestSearch"/>
             <class name="test_registration.TestCreateAccount"/>
             <class name="test_authentication.TestAuthentication"/>

@@ -5,6 +5,7 @@ import base.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import resultpage.SearchResultPage;
 
 public class HomePage extends BasePage {
 
@@ -58,10 +59,11 @@ public class HomePage extends BasePage {
         safeClickOnElement(buttonActionSearch);
     }
 
-    public void doSearch(String searchTerm) {
+    public SearchResultPage doSearch(String searchTerm) {
         inputSearchTerm(searchTerm);
         clickActionSearchButton();
 
+        return new SearchResultPage();
     }
 
     public void clickOnWomenButton() {
