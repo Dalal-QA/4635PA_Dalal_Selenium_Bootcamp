@@ -8,5 +8,13 @@
 
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="http://booking.com"/>
+    <test name="BAT">
+        <classes>
+            <class name="test_registration.TestRegistration"/>
+            <class name="test_searchflight.TestSearchFlight"/>
+
+
+        </classes>
+    </test>
 
 </suite>
