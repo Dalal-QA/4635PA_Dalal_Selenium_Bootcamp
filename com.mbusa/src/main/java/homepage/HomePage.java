@@ -6,6 +6,7 @@ import loginpage.LoginPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import searchpage.SearchPage;
 import shoppingpage.ShopPartsPage;
 import vehiclepage.VehiclePage;
 
@@ -34,6 +35,16 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//span[.='Shopping']")
     public WebElement shoppingLink;
+
+    @FindBy(xpath="//span[.='Find a Dealer']")
+    public WebElement findDealer;
+    @FindBy(xpath = "//div[@class='form__input form__input--inline']/input[@class='form__input-field form__input-field--can-reset']")
+    public WebElement zipCodeInputField;
+    @FindBy(xpath = "//button[@class='button button_primary']")
+    public WebElement searchButton;
+
+    @FindBy(xpath= "//ul[@class='location-search__list']/li[contains(.,'Philadelphia, PA')]")
+    public WebElement firstOption;
 
     public void clickOnMyAccountButton(){
 
@@ -69,4 +80,27 @@ public class HomePage extends BasePage {
         safeClickOnElement(shoppingLink);
         return new ShopPartsPage();
     }
+
+    public void clickOnFindDealer(){
+        safeClickOnElement(findDealer);
+    }
+    public void enterZipCode(String zipCode){
+        //safeClickOnElement(zipCodeInputField);
+        sendKeysToElement(zipCodeInputField,zipCode);
+    }
+    public void clickOnFirstOption(){
+        safeClickOnElement(firstOption);
+    }
+    public void clickOnSearchButton(){
+        safeClickOnElement(searchButton);
+    }
+
+   public SearchPage doFindDealer(String zipCode){
+        clickOnFindDealer();
+        enterZipCode(zipCode);
+        clickOnFirstOption();
+        clickOnSearchButton();
+        return new SearchPage();
+   }
+
 }
