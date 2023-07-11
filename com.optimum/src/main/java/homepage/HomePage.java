@@ -3,9 +3,11 @@ package homepage;
 import addtocart.AddToCard;
 import base.BasePage;
 import contactuspage.ContactUsPage;
+import loginpage.LoginPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import storeslocatorpage.StoreLocatorPage;
 
 public class HomePage extends BasePage {
     public HomePage(){
@@ -27,6 +29,16 @@ public class HomePage extends BasePage {
     public WebElement contactUsButton;
     @FindBy(xpath = "//a[contains(.,'Shop plans')]")
     public WebElement shopNowButton;
+
+    @FindBy(xpath = "//div[@class='header-item store-locator store-locator-two']//b[.='Store Locator']")
+    public WebElement storeLocatorLink;
+
+    @FindBy(xpath = "//b[.='Sign In']")
+    public WebElement signInButton;
+
+    @FindBy(xpath = "//a[@href='https://mymobile.optimum.com/login']")
+    public WebElement mobileOption;
+
 
     public void enterStreetAddress(String address){
         sendKeysToElement(addressInputField,address);
@@ -52,6 +64,25 @@ public class HomePage extends BasePage {
     public AddToCard clickOnShopButton(){
         safeClickOnElement(shopNowButton);
         return new AddToCard();
+    }
+    public StoreLocatorPage clickOnStoreLocatorButton(){
+        safeClickOnElement(storeLocatorLink);
+        return new StoreLocatorPage();
+
+    }
+
+    public void hoverOverSignInButton(){
+        hoverOverElement(signInButton);
+    }
+    public void clickOnMobileOption(){
+        safeClickOnElement(mobileOption);
+        switchToTab();
+    }
+
+    public LoginPage clickOnSignInMobile() {
+        hoverOverSignInButton();
+        clickOnMobileOption();
+        return new LoginPage();
     }
 }
 

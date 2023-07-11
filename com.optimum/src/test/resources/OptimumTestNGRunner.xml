@@ -12,6 +12,10 @@
     <test name="test">
         <classes>
             <class name="test_availabilityofservice.TestAvailabilityOfService"/>
+            <class name="test_addtocard.TestAddToCart"/>
+            <class name="test_contactus.TestContactUs"/>
+            <class name="test_storelocator.TestStoreLocator"/>
+            <class name="test_authentication.TestInvalidLogIn"/>
         </classes>
     </test>
 </suite>

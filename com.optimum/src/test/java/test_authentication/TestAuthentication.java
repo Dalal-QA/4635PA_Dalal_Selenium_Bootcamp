@@ -1,4 +1,4 @@
-package test_autentication;
+package test_authentication;
 
 public class TestAuthentication {
 }
