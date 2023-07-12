@@ -12,5 +12,4 @@ public class SearchPage extends BasePage {
     }
     @FindBy(xpath="//h1[@class='fcab3ed991 d5f78961c3']")
     public WebElement resultText;
-
 }
