@@ -42,6 +42,29 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[.='Futures Chart']")
     public WebElement futureChartsButton;
 
+    @FindBy(xpath = "//tbody[tr[contains(@data-pair_url,'/indices/us-spx-500-futures-chart?')]]")
+    public WebElement indicesTable;
+
+    @FindBy(xpath = "//tbody[tr[contains(@data-pair_url,'/commodities/natural-gas-streaming-chart')]]")
+    public WebElement commoditiesTable;
+
+    @FindBy(xpath = "//ul[@id='quotesBoxWithTabsTop']/li/a[starts-with(text(),'Commodities')]")
+    public WebElement commoditiesTab;
+
+    @FindBy(xpath = "//ul[@id='quotesBoxWithTabsTop']/li/a[contains(text(),'Bonds')]")
+    public WebElement bondsTab;
+
+    @FindBy(xpath = "//ul[@id='quotesBoxWithTabsTop']/li/a[contains(text(),'Stocks')]")
+    public WebElement stocksTab;
+
+    @FindBy(xpath = "//tbody[tr[contains(@data-pair_url,'rates-bonds')]]")
+    public WebElement bondsTable;
+
+    @FindBy(xpath = "//tbody[tr[contains(@data-pair_url,'equities')]]")
+    public WebElement stocksTable;
+
+
+
 
     public void clickOnLoginLink() {
         safeClickOnElement(loginLink);
@@ -105,6 +128,17 @@ public class HomePage extends BasePage {
       return new FutureChartPage();
     }
 
+    public void clickOnCommoditiesTab(){
+        safeClickOnElement(commoditiesTab);
+    }
+
+    public void clickOnBondsTab(){
+        safeClickOnElement(bondsTab);
+    }
+
+    public void clickOnStocksTab(){
+        safeClickOnElement(stocksTab);
+    }
 
 }
 
