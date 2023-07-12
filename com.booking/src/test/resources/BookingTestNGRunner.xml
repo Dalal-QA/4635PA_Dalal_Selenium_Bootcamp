@@ -12,6 +12,7 @@
         <classes>
             <class name="test_registration.TestRegistration"/>
             <class name="test_searchflight.TestSearchFlight"/>
+            <class name="test_searchhotel.TestSearchHotel"/>
 
 
         </classes>
