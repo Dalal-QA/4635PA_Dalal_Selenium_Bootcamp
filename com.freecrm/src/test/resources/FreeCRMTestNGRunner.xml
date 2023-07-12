@@ -15,6 +15,7 @@
         <class name="test_createnewcontact.TestCreateNewContact"/>
         <class name="test_searchcontacts.TestSearchContact"/>
         <class name="test_createtasks.TestCreatesTask"/>
+        <class name="testwithdatabase.TestNewCompany"/>
     </classes>
 </test>
 </suite>
