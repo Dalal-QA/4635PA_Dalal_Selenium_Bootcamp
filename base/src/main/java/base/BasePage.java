@@ -346,6 +346,15 @@ public class BasePage {
         calendar.setTimeInMillis(millis);
         return calendar.getTime();
     }
+
+    protected static boolean checkElementSelected(WebElement element)
+    {
+
+        webDriverWait.until(ExpectedConditions.visibilityOf(element));
+        boolean flag=element.isSelected();
+        return flag;
+    }
+
     // endregion
 
 }

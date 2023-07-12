@@ -41,7 +41,7 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//span[.='Search']")
     public WebElement searchButton;
 
-    @FindBy(xpath="//div[.='Showing 321 results']")
+    @FindBy(xpath="//button[.='Best']")
     public WebElement searchResults;
 
     @FindBy(xpath="//a[@id='accommodations']")
@@ -77,7 +77,13 @@ public class HomePage extends BasePage {
     @FindBy(xpath="//div[@class='bb0b3e18ca d9b0185ac2']/a[.='Se connecter']")
     public WebElement seConnecterBouton;
 
+    @FindBy(xpath = "//div[@class='Stack-module__root___r9Dwc Stack-module__root--direction-row___-ITW9 Stack-module__root--gap-large___lJC00 Stack-module__root--align-items-center___0oIal']/div[1]//span[@class='InputRadio-module__field___4Jbyo']")
+    public WebElement roundTripRadioButton;
+    @FindBy(xpath = "//div[@class='Stack-module__root___r9Dwc Stack-module__root--direction-row___-ITW9 Stack-module__root--gap-large___lJC00 Stack-module__root--align-items-center___0oIal']/div[2]//span[@class='InputRadio-module__field___4Jbyo']")
+    public WebElement oneWayRadioButton;
 
+    @FindBy(xpath = "//div[@class='Stack-module__root___r9Dwc Stack-module__root--direction-row___-ITW9 Stack-module__root--gap-large___lJC00 Stack-module__root--align-items-center___0oIal']/div[3]//span[@class='InputRadio-module__field___4Jbyo']")
+    public WebElement multiCityRadioButton;
 
     public RegistrationPage clickOnRegisterButton(){
         safeClickOnElement(registerButton);
@@ -167,5 +173,20 @@ public class HomePage extends BasePage {
     public void doSwitchLanguage(){
         clickOnFlagImage();
         clickOnFrenchLanguage();
+    }
+
+    public void clickOnRoundTripRadioButton(){
+        safeClickOnElement(flightsButton);
+        safeClickOnElement(roundTripRadioButton);
+    }
+
+    public void clickOnOneWayRadioButton(){
+        safeClickOnElement(flightsButton);
+        safeClickOnElement(oneWayRadioButton);
+    }
+
+    public void clickOnMultiCityRadioButton(){
+        safeClickOnElement(flightsButton);
+        safeClickOnElement(multiCityRadioButton);
     }
 }

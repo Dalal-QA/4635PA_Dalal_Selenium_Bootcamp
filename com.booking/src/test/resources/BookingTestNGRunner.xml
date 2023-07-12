@@ -14,6 +14,8 @@
             <class name="test_searchflight.TestSearchFlight"/>
             <class name="test_searchhotel.TestSearchHotel"/>
             <class name="test_switchlanguage.TestSwitchLanguage"/>
+            <class name="test_radiobuttons.TestRadioButtons"/>
+            <class name="test_filterthesearchflight.TestFilterSearchFlight"/>
 
 
         </classes>
