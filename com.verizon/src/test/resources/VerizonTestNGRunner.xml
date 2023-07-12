@@ -11,6 +11,7 @@
 
     <test name="BAT">
         <classes>
+
             <class name="test_search.TestSearch"/>
             <class name="test_sortsearchresult.TestSortSearchResult"/>
             <class name="test_addtocard.TestAddToCart"/>
