@@ -12,6 +12,8 @@
     <test name="BAT">
         <classes>
             <class name="test_search.TestSearch"/>
+            <class name="test_authentication.TestAuthentication"/>
+            <class name="test_shoppingcart.TestShoppingCart"/>
 
         </classes>
     </test>

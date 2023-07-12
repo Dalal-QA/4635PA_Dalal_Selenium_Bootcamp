@@ -10,6 +10,16 @@ import utils.ExcelData;
 
 public class TestAuthentication extends BasePage {
 
+    /* Test case: Test the login functionality on the ebay.com website:
+     *1.Navigate to the verizon.com website (https://www.ebay.com).
+     *2.Click on "Login" link.
+     *3.Enter an email in the email input field.
+     *4.Enter a password in the password input field.
+     *6.Click on "Sign in" button
+     *5.Verify that the user is successfully logged in.
+     *
+     */
+
     @Test(priority= 1, groups= {"BAT"},dataProvider = "loginDataProvider")
 
     public void testLogin(String email,String pass){
