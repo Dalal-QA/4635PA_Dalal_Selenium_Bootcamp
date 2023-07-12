@@ -69,6 +69,15 @@ public class HomePage extends BasePage {
     @FindBy(xpath="//button[@class='fc63351294 a822bdf511 d4b6b7a9e7 cfb238afa1 c938084447 f4605622ad aa11d0d5cd']")
     public WebElement submitButton;
 
+    @FindBy(xpath="//img[@src='https://t-cf.bstatic.com/design-assets/assets/v3.79.0/images-flags/Us@3x.png']")
+    public WebElement flagImage;
+    @FindBy(xpath="//span[.='Français']")
+    public WebElement frenchLanguage;
+
+    @FindBy(xpath="//div[@class='bb0b3e18ca d9b0185ac2']/a[.='Se connecter']")
+    public WebElement seConnecterBouton;
+
+
 
     public RegistrationPage clickOnRegisterButton(){
         safeClickOnElement(registerButton);
@@ -145,10 +154,18 @@ public class HomePage extends BasePage {
         safeClickOnElement(weekOption);
         safeClickOnElement(desiredMonth);
         safeClickOnElement(selectDateButton);
-
         clickOnSubmitButton();
         return new SearchPage();
+    }
 
-
+    public void clickOnFlagImage(){
+        safeClickOnElement(flagImage);
+    }
+    public void clickOnFrenchLanguage(){
+        safeClickOnElement(frenchLanguage);
+    }
+    public void doSwitchLanguage(){
+        clickOnFlagImage();
+        clickOnFrenchLanguage();
     }
 }
