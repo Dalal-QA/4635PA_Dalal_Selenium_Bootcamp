@@ -1,4 +1,4 @@
-package test_shppingcart;
+package test_shoppingcart;
 
 import authentication.DashboardPage;
 import authentication.LoginPage;
@@ -6,7 +6,6 @@ import base.BasePage;
 import homepage.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import searchpage.ModelSelectedPage;
 import shoppingpage.ShoppingPage;
 
 public class TestShoppingCart extends BasePage {
