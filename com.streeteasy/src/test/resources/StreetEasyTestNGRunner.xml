@@ -11,6 +11,7 @@
 
     <test name="test">
         <classes>
+
             <class name="test_marketdata.TestMarketData"/>
             <class name="test_authentication.TestAuthentication"/>
 
