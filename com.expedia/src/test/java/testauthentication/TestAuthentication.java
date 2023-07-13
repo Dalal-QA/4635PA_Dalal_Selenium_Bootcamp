@@ -34,7 +34,7 @@ public class TestAuthentication extends BasePage {
 
 
 
-        //Assert.assertTrue(isElementVisible(dashboardPage.nameHeader));
+
 
     }
     @DataProvider(name="logindataprovider")

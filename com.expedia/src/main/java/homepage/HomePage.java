@@ -1,10 +1,12 @@
 package homepage;
 
 import base.BasePage;
+import feedbackpage.FeedBackPage;
 import flightsearchpage.FlightSearchPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import supportpage.SupportPage;
 
 public class HomePage extends BasePage {
 
@@ -23,7 +25,7 @@ public class HomePage extends BasePage {
     @FindBy(xpath="//button[@aria-label='Leaving from']")
     public WebElement leavingFromInputBox;
 
-    @FindBy(xpath="//ul[@class='uitk-action-list no-bullet']/li[1]//button[@class='uitk-button uitk-button-medium uitk-button-fullWidth has-subtext location-field-leg1-origin-result-item-button result-item-button']")
+    @FindBy(xpath="//button[@aria-label='Philadelphia (PHL - Philadelphia Intl.) Pennsylvania, United States']")
     public WebElement airportOption;
     @FindBy(xpath = "//button[@aria-label='Going to']")
     public WebElement goingToInputBox;
@@ -33,6 +35,24 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//button[normalize-space()='Search']")
     public WebElement searchButton;
+    @FindBy(xpath = "//div[contains(text(),'Support')]")
+    public WebElement supportButton;
+
+    @FindBy(xpath="//div[contains(text(),'English')]")
+    public WebElement englishButton;
+
+    @FindBy(xpath = "//select[@id='language-selector']")
+    public WebElement languageDropDown;
+
+    @FindBy(xpath = "//button[.='Save']")
+    public WebElement saveButton;
+
+    @FindBy(xpath = "//div[contains(text(),'Español')]")
+    public WebElement spanishLanguageButton;
+
+    @FindBy(xpath="//a[normalize-space()='Feedback']")
+    public WebElement feedbackButton;
+
 
 public void clickOnSignInLink(){
     safeClickOnElement(signInLink);
@@ -79,4 +99,33 @@ public void clickOnAirportOption(){
         clickOnSearchButton();
         return new FlightSearchPage();
     }
+
+    public SupportPage clickOnSupportButton(){
+    safeClickOnElement(supportButton);
+        return new SupportPage();
+    }
+
+    public void clickOnEnglish(){
+    safeClickOnElement(englishButton);
+    }
+    public void selectFromLanguageDropDown(){
+    selectFromDropdownByVisibleText(languageDropDown,"Español");
+    }
+    public void clickOnSaveButton(){
+    safeClickOnElement(saveButton);
+    }
+
+    public void doSwitchLanguage(){
+    clickOnEnglish();
+    selectFromLanguageDropDown();
+    clickOnSaveButton();
+
+    }
+
+    public FeedBackPage clickOnFeedBackButton(){
+        safeClickOnElement(feedbackButton);
+        return new FeedBackPage();
+    }
+
+
 }
