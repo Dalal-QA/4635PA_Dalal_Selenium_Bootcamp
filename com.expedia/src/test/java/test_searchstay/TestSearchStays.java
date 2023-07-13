@@ -1,15 +1,13 @@
-package test_searchflight;
+package test_searchstay;
 
-import authentication.LoginPage;
 import base.BasePage;
-import flightsearchpage.FlightSearchPage;
-import homepage.HomePage;
+import staysearchpage.StaySearchPage;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import utils.ExcelData;
 
-public class TestSearchFlight extends BasePage {
+public class TestSearchStays extends BasePage {
 
 
 
@@ -17,7 +15,7 @@ public class TestSearchFlight extends BasePage {
 
     public void testSearchFlightData(String goingToCity,String fromDate,String toDate){
 
-        FlightSearchPage flightSearchPage=new FlightSearchPage();
+        StaySearchPage flightSearchPage=new StaySearchPage();
         flightSearchPage.searchFlight(goingToCity,fromDate,toDate);
         Assert.assertTrue(checkElementPresent(flightSearchPage.searchHotelData));
         Assert.assertTrue(checkElementPresent(flightSearchPage.showMoreResults));

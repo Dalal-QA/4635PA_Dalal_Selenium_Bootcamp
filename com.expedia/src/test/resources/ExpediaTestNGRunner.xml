@@ -11,7 +11,7 @@
     <test name="BAT">
         <classes>
             <class name="testauthentication.TestAuthentication"/>
-            <class name="test_searchflight.TestSearchFlight"/>
+            <class name="test_searchstay.TestSearchStays"/>
 
 
         </classes>
