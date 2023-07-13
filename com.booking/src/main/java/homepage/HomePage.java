@@ -1,5 +1,6 @@
 package homepage;
 
+import attractionspage.AttractionPage;
 import base.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -84,6 +85,18 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//div[@class='Stack-module__root___r9Dwc Stack-module__root--direction-row___-ITW9 Stack-module__root--gap-large___lJC00 Stack-module__root--align-items-center___0oIal']/div[3]//span[@class='InputRadio-module__field___4Jbyo']")
     public WebElement multiCityRadioButton;
+
+    @FindBy(xpath = "//input[@id='newsletter_to']")
+    public WebElement emailInputField;
+    @FindBy(xpath = "//button[@id='newsletter_button_footer']")
+    public WebElement subscribeButton;
+
+    @FindBy(xpath = "//span[.='Attractions']")
+    public WebElement attractionButton;
+
+
+
+
 
     public RegistrationPage clickOnRegisterButton(){
         safeClickOnElement(registerButton);
@@ -189,4 +202,22 @@ public class HomePage extends BasePage {
         safeClickOnElement(flightsButton);
         safeClickOnElement(multiCityRadioButton);
     }
+
+    public void enterEmailAddress(String email){
+        sendKeysToElement(emailInputField,email);
+    }
+
+    public void clickOnSubscribeButton(){
+        safeClickOnElement(subscribeButton);
+    }
+
+    public void doSubscribe(String email){
+        enterEmailAddress(email);
+        clickOnSubscribeButton();
+    }
+ public AttractionPage clickOnAttractionButton(){
+        safeClickOnElement(attractionButton);
+        return new AttractionPage();
+ }
+
 }
