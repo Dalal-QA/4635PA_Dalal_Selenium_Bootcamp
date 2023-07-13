@@ -12,6 +12,7 @@
         <classes>
             <class name="testauthentication.TestAuthentication"/>
             <class name="test_searchstay.TestSearchStays"/>
+            <class name="test_searchflights.TestSearchFlight"/>
 
 
         </classes>
