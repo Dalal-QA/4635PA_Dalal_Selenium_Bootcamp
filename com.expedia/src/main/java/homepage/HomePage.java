@@ -3,6 +3,7 @@ package homepage;
 import base.BasePage;
 import feedbackpage.FeedBackPage;
 import flightsearchpage.FlightSearchPage;
+import jobspage.JobsPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -52,6 +53,9 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath="//a[normalize-space()='Feedback']")
     public WebElement feedbackButton;
+
+    @FindBy(xpath = "//a[normalize-space()='Jobs']")
+    public WebElement jobsButton;
 
 
 public void clickOnSignInLink(){
@@ -126,6 +130,9 @@ public void clickOnAirportOption(){
         safeClickOnElement(feedbackButton);
         return new FeedBackPage();
     }
-
+public JobsPage clickOnJobsButton(){
+    safeClickOnElement(jobsButton);
+    return  new JobsPage();
+}
 
 }
