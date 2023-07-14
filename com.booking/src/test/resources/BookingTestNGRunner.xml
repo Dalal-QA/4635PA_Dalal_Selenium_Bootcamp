@@ -16,6 +16,8 @@
             <class name="test_switchlanguage.TestSwitchLanguage"/>
             <class name="test_radiobuttons.TestRadioButtons"/>
             <class name="test_filterthesearchflight.TestFilterSearchFlight"/>
+            <class name="test_helpcenter.TestHelpCenter"/>
+            <class name="test_subscribe.TestSubscribe"/>
 
 
         </classes>
