@@ -18,6 +18,7 @@
             <class name="test_filterthesearchflight.TestFilterSearchFlight"/>
             <class name="test_helpcenter.TestHelpCenter"/>
             <class name="test_subscribe.TestSubscribe"/>
+            <class name="test_filterattraction.TestFilterAttraction"/>
 
 
         </classes>

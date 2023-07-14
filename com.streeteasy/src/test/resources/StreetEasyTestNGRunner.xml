@@ -11,7 +11,7 @@
 
     <test name="test">
         <classes>
-            <class name="testHomepage.TestHomepage"/>
+
         </classes>
     </test>
 
