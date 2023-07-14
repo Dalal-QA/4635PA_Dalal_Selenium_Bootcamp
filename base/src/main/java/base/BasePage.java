@@ -84,7 +84,9 @@ public class BasePage {
 
 
 
+
     public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https://apartments.com") String url) {
+
 
 
 
@@ -365,6 +367,7 @@ public class BasePage {
 
 
 
+
     public void clickAndHitEnter(WebElement element,String data) {
         Actions actions = new Actions(driver);
 
@@ -384,12 +387,24 @@ public class BasePage {
 
 
 
-    protected static boolean checkElementPresent(WebElement element)
-    {
+    public WebElement getVisibleElement(WebElement element) {
 
-        webDriverWait.until(ExpectedConditions.visibilityOf(element));
-        boolean flag=element.isDisplayed();
-        return flag;
+
+        try {
+            fluentWait.until(ExpectedConditions.visibilityOf(element));
+        } catch (ElementNotInteractableException e) {
+            e.printStackTrace();
+        } catch (StaleElementReferenceException e2) {
+            fluentWait.until(ExpectedConditions.visibilityOf(element));
+        }
+        return element;
+    }
+
+    public void clickOnByTabKey()
+    {
+        Actions action=new Actions(driver);
+        action.sendKeys(Keys.ESCAPE).sendKeys(Keys.TAB).sendKeys(Keys.TAB).
+                sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.ENTER).build().perform();;
 
     }
 
