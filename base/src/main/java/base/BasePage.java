@@ -42,6 +42,8 @@ public class BasePage {
     public static ExtentReports extent;
     public static JavascriptExecutor jsDriver;
 
+
+
     public BasePage() {
         dataInit();
         databaseInit();
@@ -78,10 +80,7 @@ public class BasePage {
 
     @Parameters({"driverConfigEnabled", "browser", "url"})
     @BeforeMethod
-
     public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https://apartments.com") String url) {
-
-
         if (Boolean.parseBoolean(driverConfigEnabled)) {
             driverInit(browser);
             driver.get(url);
@@ -94,8 +93,8 @@ public class BasePage {
     @AfterMethod
     public void cleanUp(@Optional("true") String driverConfigEnabled) {
         if (Boolean.parseBoolean(driverConfigEnabled)) {
-            driver.close();
-            driver.quit();
+           driver.close();
+           driver.quit();
         }
     }
 
@@ -353,12 +352,19 @@ public class BasePage {
     }
 
 
-    protected static boolean checkElementPresent(WebElement element)
-    {
+
+    protected static boolean checkElementPresent(WebElement element) {
 
         webDriverWait.until(ExpectedConditions.visibilityOf(element));
-        boolean flag=element.isDisplayed();
+        boolean flag = element.isDisplayed();
         return flag;
+    }
+
+    public void clickAndHitEnter(WebElement element,String data) {
+        Actions actions = new Actions(driver);
+
+        webDriverWait.until(ExpectedConditions.visibilityOf(element));
+        actions.moveToElement(element).click(element).sendKeys(data).sendKeys(Keys.ENTER).build().perform();
 
     }
     // endregion
