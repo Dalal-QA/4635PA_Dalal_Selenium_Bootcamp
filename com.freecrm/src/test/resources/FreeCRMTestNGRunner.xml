@@ -9,4 +9,13 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="https://freecrm.com"/>
 
+    <test name="BAT">
+    <classes>
+        <class name="test_authentication.TestAuthentication"/>
+        <class name="test_createnewcontact.TestCreateNewContact"/>
+        <class name="test_searchcontacts.TestSearchContact"/>
+        <class name="test_createtasks.TestCreatesTask"/>
+        <class name="testwithdatabase.TestNewCompany"/>
+    </classes>
+</test>
 </suite>

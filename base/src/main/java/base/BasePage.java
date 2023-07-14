@@ -49,7 +49,7 @@ public class BasePage {
         dataInit();
         databaseInit();
     }
-
+    @BeforeClass
     public void databaseInit() {
         String host = dbConfig.get(BaseConfig.DBProperties.HOST);
         String user = dbConfig.get(BaseConfig.DBProperties.USER);
@@ -82,8 +82,10 @@ public class BasePage {
     @Parameters({"driverConfigEnabled", "browser", "url"})
     @BeforeMethod
 
-
     public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https://apartments.com") String url) {
+
+
+
 
 
         if (Boolean.parseBoolean(driverConfigEnabled)) {
@@ -359,6 +361,7 @@ public class BasePage {
 
 
 
+
     public void clickAndHitEnter(WebElement element,String data) {
         Actions actions = new Actions(driver);
 
@@ -374,6 +377,7 @@ public class BasePage {
         boolean flag=element.isSelected();
         return flag;
     }
+
 
 
 
