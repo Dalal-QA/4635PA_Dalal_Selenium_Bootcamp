@@ -9,4 +9,16 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="http://verizon.com"/>
 
+    <test name="BAT">
+        <classes>
+
+            <class name="test_search.TestSearch"/>
+            <class name="test_sortsearchresult.TestSortSearchResult"/>
+            <class name="test_addtocard.TestAddToCart"/>
+            <class name="test_searchstores.TestSearchStores"/>
+            <class name="test_addtofavorite.TestAddToFavorite"/>
+
+        </classes>
+    </test>
+
 </suite>
