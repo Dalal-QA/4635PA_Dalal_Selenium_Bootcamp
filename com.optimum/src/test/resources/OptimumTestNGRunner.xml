@@ -6,12 +6,17 @@
         <listener class-name="listeners.AnnotationTransformer"/>
     </listeners>
 
+
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="http://optimum.com"/>
 
     <test name="test">
         <classes>
-<!--            <class name=""/>-->
+            <class name="test_availabilityofservice.TestAvailabilityOfService"/>
+            <class name="test_addtocard.TestAddToCart"/>
+            <class name="test_contactus.TestContactUs"/>
+            <class name="test_storelocator.TestStoreLocator"/>
+            <class name="test_authentication.TestInvalidLogIn"/>
         </classes>
     </test>
 </suite>
