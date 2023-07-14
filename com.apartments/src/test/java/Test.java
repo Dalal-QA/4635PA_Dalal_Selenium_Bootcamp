@@ -1,2 +1,4 @@
-public class Test {
+import base.BasePage;
+
+public class Test extends BasePage {
 }
