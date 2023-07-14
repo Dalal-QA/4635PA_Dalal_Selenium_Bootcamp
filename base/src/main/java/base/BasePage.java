@@ -80,7 +80,9 @@ public class BasePage {
 
     @Parameters({"driverConfigEnabled", "browser", "url"})
     @BeforeMethod
+
     public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https://apartments.com") String url) {
+
         if (Boolean.parseBoolean(driverConfigEnabled)) {
             driverInit(browser);
             driver.get(url);
@@ -353,6 +355,7 @@ public class BasePage {
 
 
 
+
     protected static boolean checkElementPresent(WebElement element) {
 
         webDriverWait.until(ExpectedConditions.visibilityOf(element));
@@ -367,6 +370,16 @@ public class BasePage {
         actions.moveToElement(element).click(element).sendKeys(data).sendKeys(Keys.ENTER).build().perform();
 
     }
+
+    protected static boolean checkElementSelected(WebElement element)
+    {
+
+        webDriverWait.until(ExpectedConditions.visibilityOf(element));
+        boolean flag=element.isSelected();
+        return flag;
+    }
+
+
     // endregion
 
 }
