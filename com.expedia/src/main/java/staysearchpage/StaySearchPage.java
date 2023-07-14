@@ -51,23 +51,46 @@ public WebElement selectFirstCity;
 
     }
 
+public void clickOnGoingToButton(){
+        safeClickOnElement(goingToButton);
+}
+    public void clickOnGoingToTxBox(){
+        safeClickOnElement(goingToTxtBox);
+    }
+    public void enterCity(String goingToCity) {
+        sendKeysToElement(goingToTxtBox, goingToCity);
+    }
+    public void clickOnFirstOption(){
+        safeClickOnElement(selectFirstCity);
+    }
 
+    public void clickOnCheckingDate(){
+        safeClickOnElement(checkingDateFieldButton);
+    }
 
-    public void searchFlight(String goingToCity,String fromDate,String toDate)
-    {
+    public void clickOnDoneButton(){
+        safeClickOnElement(doneButton);
+    }
+    public void clickOnCheckoutDateFieldButton(){
+        safeClickOnElement(checkoutDateFieldButton);
+    }
 
-        clickOnElement(goingToButton);
-        clickOnElement(goingToTxtBox);
-        sendKeysToElement(goingToTxtBox,goingToCity);
-        clickOnElement(selectFirstCity);
+    public void clickOnSearchButton(){
+        safeClickOnElement(searchButton);
+    }
+    public void searchFlight(String goingToCity,String fromDate,String toDate) {
 
-        clickOnElement(checkingDateFieldButton);
+        clickOnGoingToButton();
+        clickOnGoingToTxBox();
+        enterCity(goingToCity);
+        clickOnFirstOption();
+        clickOnCheckingDate();
         selectDate(fromDate);
-        clickOnElement(doneButton);
-        clickOnElement(checkoutDateFieldButton);
+        clickOnDoneButton();
+       clickOnCheckoutDateFieldButton();
         selectDate(toDate);
         clickOnElement(doneButton);
-        clickOnElement(searchButton);
+        clickOnSearchButton();
 
     }
 
