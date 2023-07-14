@@ -10,4 +10,15 @@
     <parameter name="url" value="http://streeteasy.com"/>
 
 
+    <test name="test">
+        <classes>
+
+            <class name="test_marketdata.TestMarketData"/>
+            <class name="test_authentication.TestAuthentication"/>
+            <class name="test_filtersearch.TestSearch"/>
+
+        </classes>
+    </test>
+
+
 </suite>
