@@ -8,6 +8,7 @@ import listeners.DriverEventListener;
 import org.openqa.selenium.*;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -83,6 +84,7 @@ public class BasePage {
 
 
     public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https://apartments.com") String url) {
+
 
         if (Boolean.parseBoolean(driverConfigEnabled)) {
             driverInit(browser);
@@ -357,13 +359,6 @@ public class BasePage {
 
 
 
-    protected static boolean checkElementPresent(WebElement element) {
-
-        webDriverWait.until(ExpectedConditions.visibilityOf(element));
-        boolean flag = element.isDisplayed();
-        return flag;
-    }
-
     public void clickAndHitEnter(WebElement element,String data) {
         Actions actions = new Actions(driver);
 
@@ -380,6 +375,16 @@ public class BasePage {
         return flag;
     }
 
+
+
+    protected static boolean checkElementPresent(WebElement element)
+    {
+
+        webDriverWait.until(ExpectedConditions.visibilityOf(element));
+        boolean flag=element.isDisplayed();
+        return flag;
+
+    }
 
     // endregion
 
