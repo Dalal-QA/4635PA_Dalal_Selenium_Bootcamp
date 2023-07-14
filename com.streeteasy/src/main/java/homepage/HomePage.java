@@ -4,6 +4,7 @@ import base.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import searchpage.SearchPage;
 
 public class HomePage extends BasePage {
 
@@ -22,6 +23,10 @@ public class HomePage extends BasePage {
         public WebElement passwordInputField;
         @FindBy(xpath = "//button[@class='styled__BaseButton-sc-1mmbp3f-0 styled__Primary-sc-1mmbp3f-1 fha-dcQ bqodGM']")
         public WebElement loginButton;
+        @FindBy(xpath = "//button[@aria-label='Buy']")
+        public WebElement buyLink;
+        @FindBy(xpath="//a[@data-gtm-header-menu='Sales'][normalize-space()='Manhattan']")
+        public WebElement desiredLocation;
 
         public HomePage() {
             PageFactory.initElements(driver, this);
@@ -67,5 +72,17 @@ public class HomePage extends BasePage {
             enterPassword(password);
             clickOnLoginButton();
     }
+    public void clickOnBuyLink(){
+            safeClickOnElement(buyLink);
     }
+    public void clickOnDesiredLocation(){
+            safeClickOnElement(desiredLocation);
+    }
+
+    public SearchPage clickOnLocation(){
+            clickOnBuyLink();
+            clickOnDesiredLocation();
+            return new SearchPage();
+    }
+}
 
