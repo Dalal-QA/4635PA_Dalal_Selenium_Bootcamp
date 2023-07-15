@@ -10,7 +10,7 @@
     <parameter name="url" value="http://streeteasy.com"/>
 
 
-    <test name="test">
+    <test name="BAT">
         <classes>
 
             <class name="test_marketdata.TestMarketData"/>

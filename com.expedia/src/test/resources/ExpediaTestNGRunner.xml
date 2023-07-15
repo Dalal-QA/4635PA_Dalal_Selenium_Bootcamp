@@ -7,7 +7,7 @@
     </listeners>
 
     <parameter name="browser" value="chrome"/>
-    <parameter name="url" value="http://expedia.com"/>
+    <parameter name="url" value="https://www.expedia.com/"/>
     <test name="BAT">
         <classes>
             <class name="testauthentication.TestAuthentication"/>

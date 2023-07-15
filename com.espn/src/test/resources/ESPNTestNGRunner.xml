@@ -7,7 +7,7 @@
     </listeners>
 
     <parameter name="browser" value="chrome"/>
-    <parameter name="url" value="http://espn.com"/>
+    <parameter name="url" value="https://www.espn.com/"/>
 
     <test name="smoke">
         <!--        <groups>-->

@@ -18,10 +18,10 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "(//button[@aria-label='Search'])[2]")
     public WebElement searchIcon;
-    //  /html/body/div[2]/div/div/div[2]/div[5]/div/div[1]/div/div[3]/div/form/div
+
     @FindBy(xpath = "(//input[@name='site search'])[2]")
     public WebElement searchBar;
-    //   /html/body/div[3]/div/div/div[4]/div/div/div[1]/form/div/input
+
     @FindBy(xpath = "//div[@class='globalnav-primary-search-results bmw-grid-col-default-25 bmw-grid-col-lg-10 bmw-grid-col-lg-offset-14 globalnav-primary-search-results--active']//a[.='MyBMW']")
     public WebElement myBmwOption;
 

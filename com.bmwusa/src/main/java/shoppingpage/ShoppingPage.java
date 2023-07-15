@@ -23,7 +23,7 @@ public class ShoppingPage extends BasePage {
 
     @FindBy(xpath = "//button[@id='btnAddToCart']/span[@class='primary-text']")
     public WebElement addToCart;
-    @FindBy(xpath = "//*[@id='lblsearchQuery']")
+    @FindBy(xpath = "//input[@id='searchQuery']")
     public WebElement dealerNameInputField;
 
     @FindBy(xpath = "//span[.='Lookup']")

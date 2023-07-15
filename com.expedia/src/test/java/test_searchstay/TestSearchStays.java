@@ -27,8 +27,8 @@ public class TestSearchStays extends BasePage {
 
         StaySearchPage flightSearchPage=new StaySearchPage();
         flightSearchPage.searchFlight(goingToCity,fromDate,toDate);
-        Assert.assertTrue(checkElementPresent(flightSearchPage.searchHotelData));
-        Assert.assertTrue(checkElementPresent(flightSearchPage.showMoreResults));
+        Assert.assertTrue(checkElementSelected(flightSearchPage.searchHotelData));
+        Assert.assertTrue(checkElementSelected(flightSearchPage.showMoreResults));
 
     }
     @DataProvider(name="searchFlightDataProvider")
